@@ -5,6 +5,8 @@ import { Route, Routes } from 'react-router-dom';
 import Signup from './Components/Login/Sign Up/Signup';
 import Login from './Components/Login/Login/Login';
 import Home from './Components/Pages/Home/Home';
+import Inventory from './Components/Pages/Inventory/Inventory';
+import SingleInventory from './Components/Pages/SingleInventory/SingleInventory';
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/inventory' element={<Inventory></Inventory>}></Route>
+        <Route path='/inventory/:id' element={<SingleInventory></SingleInventory>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
       </Routes>

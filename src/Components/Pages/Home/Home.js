@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
 import './Home.css';
 import vid from '../../../vid/Elite - Car Showroom Promo.mp4';
+import InvididualItems from '../Invididual Items/InvididualItems';
+import AllFunctions from '../../../Hooks/AllFunctions';
 
 const Home = () => {
+    const [data, setData] = useState([]);
+    let fromHome = 1;
+    useEffect(() => {
+        fetch('http://localhost:5000/inventory')
+            .then(res => res.json())
+            .then(Data => setData(Data))
+    }, []);
+
+    console.log(data);
     return (
         <div>
-            <section className='container'>
+            <section className='container carousel'>
                 <Carousel>
                     <Carousel.Item>
                         <video class="mt-3" src={vid}
@@ -62,6 +73,11 @@ const Home = () => {
                     </Carousel.Item>
                 </Carousel>
             </section>
+            <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3'>
+                {
+                    data.slice(0, 6).map(items => <InvididualItems key={items._id} items={items} fromHome={fromHome}></InvididualItems>)
+                }
+            </div>
         </div>
     );
 };
