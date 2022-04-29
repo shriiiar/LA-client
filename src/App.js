@@ -9,7 +9,6 @@ import Inventory from './Components/Pages/Inventory/Inventory';
 import SingleInventory from './Components/Pages/SingleInventory/SingleInventory';
 import RequireAuth from './Components/Shared/RequiredAuth/RequiredAuth';
 import ManageInventory from './Components/Pages/Manage Inventory/ManageInventory';
-import useData from './Hooks/getData';
 import AddInvertory from './Components/Pages/Add Invertory/AddInvertory';
 
 function App() {

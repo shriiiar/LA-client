@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react';
-import useData from './getData';
+import getData from './GetData';
+import useData from './GetData';
 
 const AllFunctions = () => {
-    const [car, setCar] = useData();
+    const [car, setCar] = getData();
     const DecreaseByOne = (item) => {
 
         console.log(item);
 
         const newItem = { name: item.name, description: item.description, price: item.price, img: item.img, supplierName: item.supplierName, quantity: item.quantity - 1 };
 
-        // useEffect(() => {
+        useEffect(() => {
         const url = `http://localhost:5000/inventory/${item._id}`;
         fetch(url, {
             method: 'PUT',
@@ -23,7 +24,7 @@ const AllFunctions = () => {
                 console.log('success', data);
                 setCar(data);
             });
-        // }, [car])
+        }, [car])
     }
 
     const IncreaseByOne = (item, number) => {
@@ -32,7 +33,7 @@ const AllFunctions = () => {
 
         const newItem = { name: item.name, description: item.description, price: item.price, img: item.img, supplierName: item.supplierName, quantity: item.quantity + number };
 
-        // useEffect(() => {
+        useEffect(() => {
         const url = `http://localhost:5000/inventory/${item._id}`;
         fetch(url, {
             method: 'PUT',
@@ -46,13 +47,11 @@ const AllFunctions = () => {
                 console.log('success', data);
                 setCar(data);
             });
-        // }, [car])
+        }, [car])
     }
 
     const DeleteByOne = id => {
         console.log(id);
-        const [car, setCar] = useData([]);
-        console.log('deleting user with id, ', id);
         const url = `http://localhost:5000/inventory/${id}`;
         fetch(url, {
             method: 'DELETE'
@@ -60,7 +59,6 @@ const AllFunctions = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.deletedCount > 0) {
-                    console.log('deleted');
                     const remaining = car.filter(item => item._id !== id);
                     setCar(remaining);
                 }

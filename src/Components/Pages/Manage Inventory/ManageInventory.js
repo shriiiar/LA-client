@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import useData from '../../../Hooks/getData';
+import GetData from '../../../Hooks/GetData';
 import InvididualItems from '../Invididual Items/InvididualItems';
 import './ManageInventory.css';
 
 const ManageInventory = () => {
-    const [car, setCar] = useData([]);
+    const [car, setCar] = GetData();
 
     return (
         <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3'>

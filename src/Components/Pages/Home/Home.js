@@ -3,10 +3,10 @@ import { Carousel } from 'react-bootstrap';
 import './Home.css';
 import vid from '../../../vid/Elite - Car Showroom Promo.mp4';
 import InvididualItems from '../Invididual Items/InvididualItems';
-import useData from '../../../Hooks/getData';
+import GetData from '../../../Hooks/GetData';
 
 const Home = () => {
-    const [car, setCar] = useData([]);
+    const [car, setCar] = GetData();
     let fromHome = 1;
 
     console.log(car);

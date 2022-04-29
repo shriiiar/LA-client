@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useData = () => {
+const GetData = () => {
     const [car, setCar] = useState([]);
 
     useEffect(() => {
@@ -12,4 +12,4 @@ const useData = () => {
     return [car, setCar];
 }
 
-export default useData
+export default GetData

@@ -8,7 +8,7 @@ const SingleInventory = () => {
     const { id } = useParams();
     const navigate = useNavigate();
 
-    const [car, setCar] = useState({});
+    const [car, setCar] = useState([]);
 
     useEffect(() => {
         fetch(`http://localhost:5000/inventory/${id}`)

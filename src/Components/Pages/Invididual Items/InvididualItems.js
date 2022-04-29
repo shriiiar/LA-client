@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import AllFunctions from '../../../Hooks/AllFunctions';
-import useData from '../../../Hooks/getData';
 import './InvididualItems.css'
 
 const InvididualItems = (props) => {
