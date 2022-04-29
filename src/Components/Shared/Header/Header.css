@@ -1,0 +1,19 @@
+.nav-bg{
+    background-color: rgb(177, 19, 19);
+}
+.navLink, .navLink-header{
+    font-size: 20px;
+}
+
+.navLink-header{
+    color: rgb(177, 19, 19);
+    text-decoration: none;
+}
+
+.navbar-toggler-icon, .navbar-toggler, .collapsed{
+    background-color: rgb(177, 19, 19);
+}
+
+.user-name{
+    color: rgb(44, 44, 44);
+}
