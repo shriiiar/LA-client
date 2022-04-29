@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 
 const useData = () => {
-    const [data, setData] = useState([]);
+    const [car, setCar] = useState([]);
 
     useEffect(() => {
         fetch('http://localhost:5000/inventory')
             .then(res => res.json())
-            .then(newData => setData(newData))
+            .then(newData => setCar(newData))
     }, []);
 
-    return [data, setData];
+    return [car, setCar];
 }
 
 export default useData

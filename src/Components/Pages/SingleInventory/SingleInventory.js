@@ -7,7 +7,6 @@ const SingleInventory = () => {
 
     const { id } = useParams();
     const navigate = useNavigate();
-    console.log(id);
 
     const [car, setCar] = useState({});
 
@@ -17,14 +16,12 @@ const SingleInventory = () => {
             .then(data => setCar(data));
     }, [])
 
-    const [DecreaseByOne, IncreaseByOne] = AllFunctions();
+    const [DecreaseByOne, IncreaseByOne, DeleteByOne] = AllFunctions();
     const { name, description, price, img, supplierName, quantity } = car;
-    console.log(car);
 
     const EventSubmit = event => {
         event.preventDefault();
         const number = event.target.number.value;
-        console.log(typeof number);
         IncreaseByOne(car, parseInt(number));
     }
 

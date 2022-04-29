@@ -24,7 +24,7 @@ const Header = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto">
                         <CustomLink className="me-4 navLink" to="/">Home</CustomLink>
-                        <CustomLink className="me-4 navLink" to="/inventory">Inventory</CustomLink>
+                        {/* <CustomLink className="me-4 navLink" to="/inventory">Inventory</CustomLink> */}
                         {
                             user && <>
                             <CustomLink className="me-4 navLink" to="/manageInventory">Manage Inventory</CustomLink>

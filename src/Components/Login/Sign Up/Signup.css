@@ -24,7 +24,7 @@
     color: #e50007;
 }
 
-.input-group input{
+.input-group input, .input-group textarea{
     width: 100%;
     box-sizing: border-box;
     height: 55px;

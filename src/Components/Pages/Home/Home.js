@@ -3,12 +3,13 @@ import { Carousel } from 'react-bootstrap';
 import './Home.css';
 import vid from '../../../vid/Elite - Car Showroom Promo.mp4';
 import InvididualItems from '../Invididual Items/InvididualItems';
+import useData from '../../../Hooks/getData';
 
-const Home = (props) => {
-    const { data } = props;
+const Home = () => {
+    const [car, setCar] = useData([]);
     let fromHome = 1;
 
-    console.log(data);
+    console.log(car);
     return (
         <div>
             <section className='container carousel'>
@@ -69,7 +70,7 @@ const Home = (props) => {
             </section>
             <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3'>
                 {
-                    data.slice(0, 6).map(items => <InvididualItems key={items._id} items={items} fromHome={fromHome}></InvididualItems>)
+                    car.slice(0, 6).map(items => <InvididualItems key={items._id} items={items} fromHome={fromHome}></InvididualItems>)
                 }
             </div>
         </div>

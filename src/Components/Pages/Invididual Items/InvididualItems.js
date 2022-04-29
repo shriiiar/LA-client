@@ -1,11 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import AllFunctions from '../../../Hooks/AllFunctions';
+import useData from '../../../Hooks/getData';
 import './InvididualItems.css'
 
 const InvididualItems = (props) => {
     const { items, fromHome } = props;
     const { name, description, price, img, supplierName, quantity } = items;
+    const [DecreaseByOne, IncreaseByOne, DeleteByOne] = AllFunctions();
     const navigate = useNavigate();
     const newPath = (id) => {
         navigate(`/inventory/${id}`);
@@ -27,7 +29,7 @@ const InvididualItems = (props) => {
                     </>
                     :
                     <>
-                    <button className='button-33'>Delete Item</button>
+                    <button onClick={() => DeleteByOne(items._id)} className='button-33'>Delete Item</button>
                     </>
                 }
             </div>

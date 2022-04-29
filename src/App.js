@@ -10,21 +10,23 @@ import SingleInventory from './Components/Pages/SingleInventory/SingleInventory'
 import RequireAuth from './Components/Shared/RequiredAuth/RequiredAuth';
 import ManageInventory from './Components/Pages/Manage Inventory/ManageInventory';
 import useData from './Hooks/getData';
+import AddInvertory from './Components/Pages/Add Invertory/AddInvertory';
 
 function App() {
-
-  const [data, setData] = useData();
   return (
     <div className="App">
       <Header></Header>
       <Routes>
-        <Route path='/' element={<Home data={data}></Home>}></Route>
+        <Route path='/' element={<Home></Home>}></Route>
         <Route path='/inventory' element={<Inventory></Inventory>}></Route>
         <Route path='/inventory/:id' element={<RequireAuth>
           <SingleInventory></SingleInventory>
         </RequireAuth>}></Route>
         <Route path='/manageInventory' element={<RequireAuth>
-          <ManageInventory data={data}></ManageInventory>
+          <ManageInventory></ManageInventory>
+        </RequireAuth>}></Route>
+        <Route path='/addInventory' element={<RequireAuth>
+          <AddInvertory></AddInvertory>
         </RequireAuth>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
