@@ -3,16 +3,10 @@ import { Carousel } from 'react-bootstrap';
 import './Home.css';
 import vid from '../../../vid/Elite - Car Showroom Promo.mp4';
 import InvididualItems from '../Invididual Items/InvididualItems';
-import AllFunctions from '../../../Hooks/AllFunctions';
 
-const Home = () => {
-    const [data, setData] = useState([]);
+const Home = (props) => {
+    const { data } = props;
     let fromHome = 1;
-    useEffect(() => {
-        fetch('http://localhost:5000/inventory')
-            .then(res => res.json())
-            .then(Data => setData(Data))
-    }, []);
 
     console.log(data);
     return (

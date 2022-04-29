@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import AllFunctions from '../../../Hooks/AllFunctions';
 import './SingleInventory.css';
 
 const SingleInventory = () => {
+
     const { id } = useParams();
+    const navigate = useNavigate();
     console.log(id);
 
     const [car, setCar] = useState({});
@@ -15,14 +17,19 @@ const SingleInventory = () => {
             .then(data => setCar(data));
     }, [])
 
-    const [DecreaseByOne] = AllFunctions();
+    const [DecreaseByOne, IncreaseByOne] = AllFunctions();
     const { name, description, price, img, supplierName, quantity } = car;
     console.log(car);
 
     const EventSubmit = event => {
         event.preventDefault();
         const number = event.target.number.value;
-        console.log(number);
+        console.log(typeof number);
+        IncreaseByOne(car, parseInt(number));
+    }
+
+    const goToManageInventory = () => {
+        navigate('/manageInventory');
     }
     return (
         <div className='p-5'>
@@ -38,18 +45,19 @@ const SingleInventory = () => {
                 <button onClick={() => DecreaseByOne(car)} className='button-33 mx-auto w-25'>Delivered</button>
             </div>
             <div className='card form-container p-5'>
-                    <div>
-                        <h2 className='form-title mb-5 text-center'>Restock Inventory</h2>
-                        <form onSubmit={EventSubmit}>
-                            <div className="input-group">
-                                <label htmlFor='number'>Restock </label>
-                                <input type="number" name="number" required/>
-                            </div>
-                            <input className='form-submit w-25' type="submit" required value="Restock" />
-                        </form>
+                <div>
+                    <h2 className='form-title mb-5 text-center'>Restock Inventory</h2>
+                    <form onSubmit={EventSubmit}>
+                        <div className="input-group">
+                            <label htmlFor='number'>Restock </label>
+                            <input type="number" name="number" required />
+                        </div>
+                        <input className='form-submit w-25' type="submit" required value="Restock" />
+                    </form>
 
-                    </div>
                 </div>
+            </div>
+            <button onClick={() => goToManageInventory()} className='button-33'>Manage Inventory</button>
         </div>
     );
 };

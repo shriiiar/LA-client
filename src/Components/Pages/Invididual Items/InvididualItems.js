@@ -22,8 +22,12 @@ const InvididualItems = (props) => {
                 <h5 className='text-start'>Supplier Name: <span className='item-span'>{supplierName}</span></h5>
                 <h5 className='text-start'>Quantity: <span className='item-span'>{quantity}</span></h5>
                 {
-                    fromHome !== undefined && <>
+                    fromHome !== undefined ? <>
                         <button onClick={() => newPath(items._id)} className='button-33'>Update</button>
+                    </>
+                    :
+                    <>
+                    <button className='button-33'>Delete Item</button>
                     </>
                 }
             </div>
