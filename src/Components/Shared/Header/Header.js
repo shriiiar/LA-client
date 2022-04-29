@@ -39,7 +39,7 @@ const Header = () => {
                                 <CustomLink className="me-4 navLink" to="/login">Login</CustomLink></>
                                 :
                                 <>
-                                    <span className='navLink border-0 fw-bold user-name me-4'>{user?.displayName}</span>
+                                    <span className='navLink border-0 fw-bold user-name me-4' style={{color: "white"}}>{user?.displayName}</span>
                                     <button className="navLink border-0 bg-transparent text-start p-0" onClick={userSignOut}>Sign Out</button></>
                         }
                     </Nav>
