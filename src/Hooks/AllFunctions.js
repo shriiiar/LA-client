@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import getData from './GetData';
-import useData from './GetData';
 
 const AllFunctions = () => {
     const [car, setCar] = getData();
@@ -10,8 +9,8 @@ const AllFunctions = () => {
 
         const newItem = { name: item.name, description: item.description, price: item.price, img: item.img, supplierName: item.supplierName, quantity: item.quantity - 1 };
 
-        useEffect(() => {
-        const url = `http://localhost:5000/inventory/${item._id}`;
+        // useEffect(() => {
+        const url = `https://boiling-oasis-47037.herokuapp.com/inventory/${item._id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -24,7 +23,7 @@ const AllFunctions = () => {
                 console.log('success', data);
                 setCar(data);
             });
-        }, [car])
+        // }, [])
     }
 
     const IncreaseByOne = (item, number) => {
@@ -33,8 +32,8 @@ const AllFunctions = () => {
 
         const newItem = { name: item.name, description: item.description, price: item.price, img: item.img, supplierName: item.supplierName, quantity: item.quantity + number };
 
-        useEffect(() => {
-        const url = `http://localhost:5000/inventory/${item._id}`;
+        // useEffect(() => {
+        const url = `https://boiling-oasis-47037.herokuapp.com/inventory/${item._id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -47,12 +46,12 @@ const AllFunctions = () => {
                 console.log('success', data);
                 setCar(data);
             });
-        }, [car])
+        // }, [])
     }
 
     const DeleteByOne = id => {
         console.log(id);
-        const url = `http://localhost:5000/inventory/${id}`;
+        const url = `https://boiling-oasis-47037.herokuapp.com/inventory/${id}`;
         fetch(url, {
             method: 'DELETE'
         })

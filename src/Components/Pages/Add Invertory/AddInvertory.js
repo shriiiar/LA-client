@@ -8,10 +8,10 @@ const AddInvertory = () => {
 
     const EventSubmit = (event) => {
 
-        const newItem = { name: event.target.name.value, description: event.target.description.value, price: event.target.price.value, img: event.target.img.value, supplierName: event.target.supplierName.value, quantity: event.target.quantity.value };
+        const newItem = { name: event.target.name.value, description: event.target.description.value, price: event.target.price.value, img: event.target.img.value, supplierName: event.target.supplierName.value, quantity: event.target.quantity.value, email: event.target.email.value };
 
         event.preventDefault();
-        const url = `http://localhost:5000/inventory`;
+        const url = `https://boiling-oasis-47037.herokuapp.com/inventory`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -53,6 +53,10 @@ const AddInvertory = () => {
                     <div className="input-group">
                         <label htmlFor='supplierName'>Supplier Name</label>
                         <input type="text" name="supplierName" required />
+                    </div>
+                    <div className="input-group">
+                        <label htmlFor='email'>Your Email</label>
+                        <input type="text" name="email" required />
                     </div>
                     <input className='form-submit' type="submit" required value="Submit" />
                 </form>

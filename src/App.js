@@ -10,6 +10,7 @@ import SingleInventory from './Components/Pages/SingleInventory/SingleInventory'
 import RequireAuth from './Components/Shared/RequiredAuth/RequiredAuth';
 import ManageInventory from './Components/Pages/Manage Inventory/ManageInventory';
 import AddInvertory from './Components/Pages/Add Invertory/AddInvertory';
+import MyItems from './Components/Pages/My Items/MyItems';
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
         </RequireAuth>}></Route>
         <Route path='/manageInventory' element={<RequireAuth>
           <ManageInventory></ManageInventory>
+        </RequireAuth>}></Route>
+        <Route path='/myitems' element={<RequireAuth>
+          <MyItems></MyItems>
         </RequireAuth>}></Route>
         <Route path='/addInventory' element={<RequireAuth>
           <AddInvertory></AddInvertory>
