@@ -6,10 +6,8 @@ import InvididualItems from '../Invididual Items/InvididualItems';
 import GetData from '../../../Hooks/GetData';
 
 const Home = () => {
-    const [car, setCar] = GetData();
+    const [getData, setGetData] = GetData();
     let fromHome = 1;
-
-    console.log(car);
     return (
         <div>
             <section className='container carousel'>
@@ -70,7 +68,7 @@ const Home = () => {
             </section>
             <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3'>
                 {
-                    car.slice(0, 6).map(items => <InvididualItems key={items._id} items={items} fromHome={fromHome}></InvididualItems>)
+                    getData.slice(0, 6).map(items => <InvididualItems key={items._id} items={items} fromHome={fromHome}></InvididualItems>)
                 }
             </div>
         </div>

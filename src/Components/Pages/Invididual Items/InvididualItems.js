@@ -26,10 +26,11 @@ const InvididualItems = (props) => {
                     fromHome !== undefined ? <>
                         <button onClick={() => newPath(items._id)} className='button-33'>Update</button>
                     </>
-                    :
-                    <>
-                    <button onClick={() => DeleteByOne(items._id)} className='button-33'>Delete Item</button>
-                    </>
+                        :
+                        <>
+                            <button onClick={() => newPath(items._id)} className='button-33 my-3'>Update</button>
+                            <button onClick={() => DeleteByOne(items._id)} className='button-33'>Delete Item</button>
+                        </>
                 }
             </div>
         </div>

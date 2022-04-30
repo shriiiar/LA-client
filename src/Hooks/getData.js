@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 
 const GetData = () => {
-    const [car, setCar] = useState([]);
+    const [getData, setGetData] = useState([]);
 
     useEffect(() => {
-        fetch('https://boiling-oasis-47037.herokuapp.com/inventory')
+        fetch('http://localhost:5000/inventory')
             .then(res => res.json())
-            .then(newData => setCar(newData))
+            .then(newData => setGetData(newData))
     }, []);
 
-    return [car, setCar];
+    return [getData, setGetData];
 }
 
 export default GetData

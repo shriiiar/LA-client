@@ -10,7 +10,7 @@ const MyItems = () => {
     const [user] = useAuthState(auth);
     useEffect(() => {
         const email = user?.email;
-        const url = `https://boiling-oasis-47037.herokuapp.com/myItems?email=${email}`;
+        const url = `http://localhost:5000/myItems?email=${email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setMyItems(data))

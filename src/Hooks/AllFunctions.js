@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import getData from './GetData';
+import GetData from './GetData';
 
 const AllFunctions = () => {
-    const [car, setCar] = getData();
+    const [getData, setGetData] = GetData();
+
     const DecreaseByOne = (item) => {
 
         console.log(item);
@@ -10,20 +11,20 @@ const AllFunctions = () => {
         const newItem = { name: item.name, description: item.description, price: item.price, img: item.img, supplierName: item.supplierName, quantity: item.quantity - 1 };
 
         // useEffect(() => {
-        const url = `https://boiling-oasis-47037.herokuapp.com/inventory/${item._id}`;
-        fetch(url, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(newItem)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log('success', data);
-                setCar(data);
-            });
-        // }, [])
+            const url = `http://localhost:5000/inventory/${item._id}`;
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(newItem)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log('success', data);
+                    setGetData(data);
+                });
+        // }, [getData])
     }
 
     const IncreaseByOne = (item, number) => {
@@ -33,37 +34,39 @@ const AllFunctions = () => {
         const newItem = { name: item.name, description: item.description, price: item.price, img: item.img, supplierName: item.supplierName, quantity: item.quantity + number };
 
         // useEffect(() => {
-        const url = `https://boiling-oasis-47037.herokuapp.com/inventory/${item._id}`;
-        fetch(url, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(newItem)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log('success', data);
-                setCar(data);
-            });
-        // }, [])
+            const url = `http://localhost:5000/inventory/${item._id}`;
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(newItem)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log('success', data);
+                    setGetData(data);
+                });
+        // }, [getData])
     }
 
     const DeleteByOne = id => {
         console.log(id);
-        const url = `https://boiling-oasis-47037.herokuapp.com/inventory/${id}`;
-        fetch(url, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount > 0) {
-                    const remaining = car.filter(item => item._id !== id);
-                    setCar(remaining);
-                }
+        const proceed = window.confirm('Are you sure you want to delete?');
+        if (proceed) {
+            const url = `http://localhost:5000/inventory/${id}`;
+            fetch(url, {
+                method: 'DELETE'
             })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        const remaining = getData.filter(item => item._id !== id);
+                        setGetData(remaining);
+                    }
+                })
+        }
     }
-
     return [DecreaseByOne, IncreaseByOne, DeleteByOne];
 }
 

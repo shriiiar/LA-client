@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
+import GetData from '../../../Hooks/GetData';
 import './AddInvertory.css';
 
 const AddInvertory = () => {
 
-    const [car, setCar] = useState([]);
+    const [getData, setGetData] = GetData();
 
     const EventSubmit = (event) => {
 
         const newItem = { name: event.target.name.value, description: event.target.description.value, price: event.target.price.value, img: event.target.img.value, supplierName: event.target.supplierName.value, quantity: event.target.quantity.value, email: event.target.email.value };
 
         event.preventDefault();
-        const url = `https://boiling-oasis-47037.herokuapp.com/inventory`;
+        const url = `http://localhost:5000/inventory`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -22,7 +23,7 @@ const AddInvertory = () => {
             .then(res => res.json())
             .then(result => {
                 console.log(result);
-                setCar(result);
+                setGetData(result);
             })
     };
     return (

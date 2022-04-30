@@ -11,10 +11,10 @@ const SingleInventory = () => {
     const [car, setCar] = useState([]);
 
     useEffect(() => {
-        fetch(`https://boiling-oasis-47037.herokuapp.com/inventory/${id}`)
+        fetch(`http://localhost:5000/inventory/${id}`)
             .then(res => res.json())
             .then(data => setCar(data));
-    }, [])
+    }, [car])
 
     const [DecreaseByOne, IncreaseByOne, DeleteByOne] = AllFunctions();
     const { name, description, price, img, supplierName, quantity } = car;

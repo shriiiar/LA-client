@@ -11,6 +11,7 @@ import RequireAuth from './Components/Shared/RequiredAuth/RequiredAuth';
 import ManageInventory from './Components/Pages/Manage Inventory/ManageInventory';
 import AddInvertory from './Components/Pages/Add Invertory/AddInvertory';
 import MyItems from './Components/Pages/My Items/MyItems';
+import { useEffect } from 'react';
 
 function App() {
   return (
