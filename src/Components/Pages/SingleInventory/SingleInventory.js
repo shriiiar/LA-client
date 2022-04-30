@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import AllFunctions from '../../../Hooks/AllFunctions';
+import GetData from '../../../Hooks/GetData';
 import './SingleInventory.css';
 
 const SingleInventory = () => {
@@ -9,12 +10,18 @@ const SingleInventory = () => {
     const navigate = useNavigate();
 
     const [car, setCar] = useState([]);
+    const [data, setData] = useState([]);
 
     useEffect(() => {
         fetch(`http://localhost:5000/inventory/${id}`)
             .then(res => res.json())
             .then(data => setCar(data));
     }, [car])
+    useEffect(() => {
+        fetch(`http://localhost:5000/inventory`)
+            .then(res => res.json())
+            .then(newData => setData(newData));
+    }, [data])
 
     const [DecreaseByOne, IncreaseByOne, DeleteByOne] = AllFunctions();
     const { name, description, price, img, supplierName, quantity } = car;

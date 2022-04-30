@@ -10,21 +10,19 @@ const AllFunctions = () => {
 
         const newItem = { name: item.name, description: item.description, price: item.price, img: item.img, supplierName: item.supplierName, quantity: item.quantity - 1 };
 
-        // useEffect(() => {
-            const url = `http://localhost:5000/inventory/${item._id}`;
-            fetch(url, {
-                method: 'PUT',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(newItem)
-            })
-                .then(res => res.json())
-                .then(data => {
-                    console.log('success', data);
-                    setGetData(data);
-                });
-        // }, [getData])
+        const url = `http://localhost:5000/inventory/${item._id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newItem)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('success', data);
+                setGetData(data);
+            });
     }
 
     const IncreaseByOne = (item, number) => {
@@ -33,21 +31,19 @@ const AllFunctions = () => {
 
         const newItem = { name: item.name, description: item.description, price: item.price, img: item.img, supplierName: item.supplierName, quantity: item.quantity + number };
 
-        // useEffect(() => {
-            const url = `http://localhost:5000/inventory/${item._id}`;
-            fetch(url, {
-                method: 'PUT',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(newItem)
-            })
-                .then(res => res.json())
-                .then(data => {
-                    console.log('success', data);
-                    setGetData(data);
-                });
-        // }, [getData])
+        const url = `http://localhost:5000/inventory/${item._id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newItem)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('success', data);
+                setGetData(data);
+            });
     }
 
     const DeleteByOne = id => {

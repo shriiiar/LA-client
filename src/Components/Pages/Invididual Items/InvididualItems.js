@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AllFunctions from '../../../Hooks/AllFunctions';
 import './InvididualItems.css'
@@ -8,6 +8,15 @@ const InvididualItems = (props) => {
     const { name, description, price, img, supplierName, quantity } = items;
     const [DecreaseByOne, IncreaseByOne, DeleteByOne] = AllFunctions();
     const navigate = useNavigate();
+
+    const [car, setCar] = useState([]);
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/inventory`)
+            .then(res => res.json())
+            .then(data => setCar(data));
+    }, [car])
+
     const newPath = (id) => {
         navigate(`/inventory/${id}`);
     }
