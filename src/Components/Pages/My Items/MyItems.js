@@ -10,6 +10,7 @@ import './MyItems.css'
 
 const MyItems = () => {
     const [myItems, setMyItems] = useState([]);
+    const [data, setData] = useState([]);
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
 
@@ -20,7 +21,6 @@ const MyItems = () => {
             const url = `http://localhost:5000/myItems?email=${email}`;
             try {
                 const { data } = await axiosPrivate.get(url);
-                console.log(data);
                 setMyItems(data);
             }
             catch (error) {
@@ -34,6 +34,8 @@ const MyItems = () => {
         getMtItems();
 
     }, [user])
+
+    
 
     return (
         <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3'>
