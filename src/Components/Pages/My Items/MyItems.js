@@ -33,7 +33,7 @@ const MyItems = () => {
         }
         getMtItems();
 
-    }, [user])
+    }, [user, myItems])
 
     
 

@@ -8,6 +8,7 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import SocialLogin from '../Social Login/SocialLogin';
 import Loading from '../../Shared/Loading/Loading';
 import useToken from '../../../Hooks/UseToken';
+import signUpSvg from '../../../img/undraw_Login_re_4vu2.png';
 
 const Signup = () => {
 
@@ -65,38 +66,46 @@ const Signup = () => {
         errorMsg = <p>{error?.message}</p>;
     }
     return (
-        <div className='form-container'>
-            <div>
-                <h2 className='form-title mb-5 text-center'>Sign Up</h2>
-                <form onSubmit={eventSubmit}>
-                    <div className="input-group">
-                        <label htmlFor='name'>Name</label>
-                        <input ref={nameRef} type="name" name="name" required />
-                    </div>
-                    <div className="input-group">
-                        <label htmlFor='email'>Email</label>
-                        <input ref={emailRef} type="email" name="email" required />
-                    </div>
-                    <div className="input-group">
-                        <label htmlFor='password'>Password</label>
-                        <input ref={passwordRef} type="password" name="password" />
-                    </div>
-                    <div className="input-group">
-                        <label htmlFor='confirm-password'>Confirm Password</label>
-                        <input ref={confirmPasswordRef} type="password" name="confirm-password" required />
-                    </div>
-                    <input onClick={checkAgree} className='mb-3' type="checkbox" name="terms" id="" />
-                    <label className={`ps-2 ${agree ? 'text-success' : 'text-danger'}`} htmlFor='terms'>Accepct terms and conditions</label>
-                    <input className='form-submit' type="submit" required value="Signup" />
-                </form>
-                <h6 className="text-danger my-3"> {errorMsg}</h6>
-                <h6 className="text-danger my-3"> {errorMessage}</h6>
-                <ToastContainer />
-                <p className='my-3 fs-5'>
-                    Already have an account? <Link className='form-link' to='/login'>Login</Link>
-                </p>
-                <SocialLogin></SocialLogin>
+        <div className="row">
+            <div className='col-lg-7 col-md-12 col-sm-12 order-2 order-sm-2 order-md-2 order-lg-1'>
+                <img className='wave img-fluid' src={signUpSvg} alt="signup svg image" />
             </div>
+            <div className='col-lg-5 col-md-12 order-1 col-sm-12 order-sm-1 order-md-1 order-lg-2'>
+                <div className='form-container'>
+                    <div>
+                        <h2 className='form-title mb-5 text-center'>Sign Up</h2>
+                        <form onSubmit={eventSubmit}>
+                            <div className="input-group">
+                                <label htmlFor='name'>Name</label>
+                                <input ref={nameRef} type="name" name="name" required />
+                            </div>
+                            <div className="input-group">
+                                <label htmlFor='email'>Email</label>
+                                <input ref={emailRef} type="email" name="email" required />
+                            </div>
+                            <div className="input-group">
+                                <label htmlFor='password'>Password</label>
+                                <input ref={passwordRef} type="password" name="password" />
+                            </div>
+                            <div className="input-group">
+                                <label htmlFor='confirm-password'>Confirm Password</label>
+                                <input ref={confirmPasswordRef} type="password" name="confirm-password" required />
+                            </div>
+                            <input onClick={checkAgree} className='mb-3' type="checkbox" name="terms" id="" />
+                            <label className={`ps-2 ${agree ? 'text-success' : 'text-danger'}`} htmlFor='terms'>Accepct terms and conditions</label>
+                            <input className='form-submit' type="submit" required value="Signup" />
+                        </form>
+                        <h6 className="text-danger my-3"> {errorMsg}</h6>
+                        <h6 className="text-danger my-3"> {errorMessage}</h6>
+                        <ToastContainer />
+                        <p className='my-3 fs-5'>
+                            Already have an account? <Link className='form-link' to='/login'>Login</Link>
+                        </p>
+                        <SocialLogin></SocialLogin>
+                    </div>
+                </div>
+            </div>
+
         </div>
     );
 };

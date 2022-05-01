@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import SocialLogin from '../Social Login/SocialLogin';
 import Loading from '../../Shared/Loading/Loading';
 import useToken from '../../../Hooks/UseToken';
+import carPng from '../../../img/undraw_electric_car_b7hl.png';
 
 const Login = () => {
     const emailRef = useRef("");
@@ -31,7 +32,7 @@ const Login = () => {
 
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
-    if (loading || sending) {
+    if (loading) {
         return <Loading></Loading>
     }
 
@@ -64,30 +65,37 @@ const Login = () => {
         </div>
     }
     return (
-        <div className='form-container'>
-            <div>
-                <h2 className='form-title mb-5 text-center'>Login</h2>
-                <form onSubmit={EventSubmit}>
-                    <div className="input-group">
-                        <label htmlFor='email'>Email</label>
-                        <input onBlur={eventSetEmail} ref={emailRef} type="email" name="email" required />
-                    </div>
-                    <div className="input-group">
-                        <label htmlFor='password'>Password</label>
-                        <input ref={passwordRef} type="password" name="password" />
-                    </div>
-                    <input className='form-submit' type="submit" required value="Login" />
-                </form>
-                {errorElement}
-                <p className='my-3 fs-5'>
-                    Already have an account? <button className='form-link bg-transparent border-0' onClick={resetPassword}>Reset Password</button>
-                </p>
-                <p className='my-3 fs-5'>
-                    New User? <Link className='form-link' to='/signup'>Sign Up</Link>
-                </p>
-                <SocialLogin></SocialLogin>
+        <div className='row'>
+            <div className="col-lg-7 col-md-12 col-sm-12 order-2 order-sm-2 order-md-2 order-lg-1">
+                <img className='wave img-fluid' src={carPng} alt="svg car image" />
             </div>
-            <ToastContainer />
+            <div className="col-lg-5 col-md-12 order-1 col-sm-12 order-sm-1 order-md-1 order-lg-2">
+                <div className='form-container'>
+                    <div>
+                        <h2 className='form-title mb-5 text-center'>Login</h2>
+                        <form onSubmit={EventSubmit}>
+                            <div className="input-group">
+                                <label htmlFor='email'>Email</label>
+                                <input onBlur={eventSetEmail} ref={emailRef} type="email" name="email" required />
+                            </div>
+                            <div className="input-group">
+                                <label htmlFor='password'>Password</label>
+                                <input ref={passwordRef} type="password" name="password" />
+                            </div>
+                            <input className='form-submit button-33' type="submit" required value="Login" />
+                        </form>
+                        {errorElement}
+                        <p className='my-3 fs-5'>
+                            Already have an account? <button className='form-link bg-transparent border-0' onClick={resetPassword}>Reset Password</button>
+                        </p>
+                        <p className='my-3 fs-5'>
+                            New User? <Link className='form-link' to='/signup'>Sign Up</Link>
+                        </p>
+                        <SocialLogin></SocialLogin>
+                    </div>
+                    <ToastContainer />
+                </div>
+            </div>
         </div>
     );
 
