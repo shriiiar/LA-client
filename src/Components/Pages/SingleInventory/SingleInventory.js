@@ -30,6 +30,7 @@ const SingleInventory = () => {
         event.preventDefault();
         const number = event.target.number.value;
         IncreaseByOne(car, parseInt(number));
+        event.target.reset();
     }
 
     const goToManageInventory = () => {

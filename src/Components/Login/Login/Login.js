@@ -6,6 +6,8 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SocialLogin from '../Social Login/SocialLogin';
+import Loading from '../../Shared/Loading/Loading';
+import useToken from '../../../Hooks/UseToken';
 
 const Login = () => {
     const emailRef = useRef("");
@@ -25,19 +27,24 @@ const Login = () => {
     const [signInWithEmailAndPassword, user, loading, error] =
         useSignInWithEmailAndPassword(auth);
 
-    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
-    useEffect(() => {
-        if (user) {
-            navigate(from, { replace: true });
-        }
-    }, [user]);
+    const [token] = useToken(user);
 
-    const EventSubmit = (event) => {
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
+    if (loading || sending) {
+        return <Loading></Loading>
+    }
+
+    if (token) {
+        navigate(from, { replace: true });
+    }
+
+    const EventSubmit = async (event) => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
 
-        signInWithEmailAndPassword(email, password);
+        await signInWithEmailAndPassword(email, password);
     };
 
     const resetPassword = async () => {

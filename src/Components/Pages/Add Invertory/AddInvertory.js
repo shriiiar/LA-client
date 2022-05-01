@@ -25,6 +25,7 @@ const AddInvertory = () => {
                 console.log(result);
                 setGetData(result);
             })
+        event.target.reset();
     };
     return (
         <div className='form-container'>

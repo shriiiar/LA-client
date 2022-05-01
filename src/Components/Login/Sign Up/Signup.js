@@ -6,6 +6,8 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import SocialLogin from '../Social Login/SocialLogin';
+import Loading from '../../Shared/Loading/Loading';
+import useToken from '../../../Hooks/UseToken';
 
 const Signup = () => {
 
@@ -22,6 +24,8 @@ const Signup = () => {
     const [updateProfile, updating] = useUpdateProfile(auth);
     const [email, setEmail] = useState("");
 
+    const [token] = useToken(user);
+
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
@@ -31,7 +35,11 @@ const Signup = () => {
         else setAgree(false);
     }
 
-    if (user) {
+    if (loading || updating) {
+        return <Loading></Loading>
+    }
+
+    if (token) {
         navigate(from, { replace: true });
     }
 

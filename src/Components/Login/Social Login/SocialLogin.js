@@ -4,10 +4,13 @@ import auth from '../../../firebase.init';
 import googleLogo from '../../../img/google-logo-9824.png'
 import githubLogo from '../../../img/github-logo.png'
 import { useLocation, useNavigate } from 'react-router-dom';
+import useToken from '../../../Hooks/UseToken';
+import Loading from '../../Shared/Loading/Loading';
 
 const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const [signInWithGithub, user1, loading1, error1] = useSignInWithGithub(auth);
+    const [token] = useToken(user || user1);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -15,12 +18,15 @@ const SocialLogin = () => {
     
     let errorElement;
 
+    if(loading || loading1){
+        <Loading></Loading>
+    }
 
     if (error || error1) {
         errorElement = <p className='text-danger'>Error: {error?.message} {error1?.message}</p>
     }
 
-    if (user || user1) {
+    if (token) {
         navigate(from, { replace: true });
     }
 
