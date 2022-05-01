@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import GetData from '../../../Hooks/GetData';
+import { toast, ToastContainer } from 'react-toastify';
 import './AddInvertory.css';
 
 const AddInvertory = () => {
@@ -26,6 +27,7 @@ const AddInvertory = () => {
                 setGetData(result);
             })
         event.target.reset();
+        toast('Items Added, Check My Items Section')
     };
     return (
         <div className='form-container'>
@@ -61,6 +63,7 @@ const AddInvertory = () => {
                         <input type="text" name="email" required />
                     </div>
                     <input className='form-submit' type="submit" required value="Submit" />
+                    <ToastContainer></ToastContainer>
                 </form>
             </div>
         </div>
