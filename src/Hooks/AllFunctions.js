@@ -8,7 +8,9 @@ const AllFunctions = () => {
 
         console.log(item);
 
-        const newItem = { name: item.name, description: item.description, price: item.price, img: item.img, supplierName: item.supplierName, quantity: item.quantity - 1 };
+        const newQuantity = parseInt(item.quantity) - 1;
+
+        const newItem = { name: item.name, description: item.description, price: item.price, img: item.img, supplierName: item.supplierName, quantity: newQuantity };
 
         const url = `http://localhost:5000/inventory/${item._id}`;
         fetch(url, {
@@ -27,9 +29,11 @@ const AllFunctions = () => {
 
     const IncreaseByOne = (item, number) => {
 
-        console.log(item, number);
+        console.log(item, typeof number);
 
-        const newItem = { name: item.name, description: item.description, price: item.price, img: item.img, supplierName: item.supplierName, quantity: item.quantity + number };
+        const newQuantity = parseInt(item.quantity) + parseInt(number);
+
+        const newItem = { name: item.name, description: item.description, price: item.price, img: item.img, supplierName: item.supplierName, quantity: newQuantity };
 
         const url = `http://localhost:5000/inventory/${item._id}`;
         fetch(url, {

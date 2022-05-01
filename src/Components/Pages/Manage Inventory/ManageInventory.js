@@ -15,7 +15,7 @@ const ManageInventory = () => {
                 const match = newData.filter(item => item.name.toLowerCase().includes(searchText));
                 setData(match);
             })
-    }, [searchText])
+    }, [searchText, data])
 
     const textChange = (event) => { // getting search result
         console.log(event.target.value);

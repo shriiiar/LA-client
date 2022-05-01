@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import GetData from '../../../Hooks/GetData';
 import AllFunctions from '../../../Hooks/AllFunctions';
@@ -8,6 +8,14 @@ const SingleMyItem = (props) => {
     const { name, description, price, img, supplierName, quantity } = item;
     const [getData, setGetData] = GetData();
     const [DecreaseByOne, IncreaseByOne, DeleteByOne] = AllFunctions();
+
+    const [data, setData] = useState([]);
+    useEffect(() => {
+        fetch(`http://localhost:5000/inventory`)
+            .then(res => res.json())
+            .then(data => setData(data));
+    }, [data])
+
     const navigate = useNavigate();
     const newPath = (id) => {
         navigate(`/inventory/${id}`);

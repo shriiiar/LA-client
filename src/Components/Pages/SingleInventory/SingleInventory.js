@@ -10,26 +10,21 @@ const SingleInventory = () => {
     const navigate = useNavigate();
 
     const [car, setCar] = useState([]);
-    const [data, setData] = useState([]);
 
     useEffect(() => {
         fetch(`http://localhost:5000/inventory/${id}`)
             .then(res => res.json())
             .then(data => setCar(data));
     }, [car])
-    useEffect(() => {
-        fetch(`http://localhost:5000/inventory`)
-            .then(res => res.json())
-            .then(newData => setData(newData));
-    }, [data])
 
     const [DecreaseByOne, IncreaseByOne, DeleteByOne] = AllFunctions();
     const { name, description, price, img, supplierName, quantity } = car;
 
     const EventSubmit = event => {
         event.preventDefault();
-        const number = event.target.number.value;
-        IncreaseByOne(car, parseInt(number));
+        const number = parseInt(event.target.number.value);
+        console.log(typeof number, typeof car.quantity);
+        IncreaseByOne(car, number);
         event.target.reset();
     }
 
