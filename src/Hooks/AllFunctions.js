@@ -49,25 +49,8 @@ const AllFunctions = () => {
                 setGetData(data);
             });
     }
-
-    const DeleteByOne = id => {
-        console.log(id);
-        const proceed = window.confirm('Are you sure you want to delete?');
-        if (proceed) {
-            const url = `http://localhost:5000/inventory/${id}`;
-            fetch(url, {
-                method: 'DELETE'
-            })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.deletedCount > 0) {
-                        const remaining = getData.filter(item => item._id !== id);
-                        setGetData(remaining);
-                    }
-                })
-        }
-    }
-    return [DecreaseByOne, IncreaseByOne, DeleteByOne];
+    
+    return [DecreaseByOne, IncreaseByOne];
 }
 
 export default AllFunctions

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Loading from '../../Shared/Loading/Loading';
 import InvididualItems from '../Invididual Items/InvididualItems';
 import './ManageInventory.css';
 
@@ -8,7 +9,7 @@ const ManageInventory = () => {
     const [searchText, setSearchText] = useState('');
     const navigate = useNavigate();
 
-    useEffect(() => {
+    useEffect( () => {
         fetch('http://localhost:5000/inventory')
             .then(res => res.json())
             .then(newData => {
@@ -17,7 +18,7 @@ const ManageInventory = () => {
             })
     }, [searchText, data])
 
-    const textChange = (event) => { // getting search result
+    const textChange = (event) => {
         console.log(event.target.value);
         setSearchText(event.target.value);
     }
@@ -36,7 +37,7 @@ const ManageInventory = () => {
                     data.map(items => <InvididualItems key={items._id} items={items}></InvididualItems>)
                 }
             </div>
-            <button onClick={() => gotoMyItem()} className='button-33'>Add New Item</button>
+            <button onClick={() => gotoMyItem()} className='button-2 my-5'>Add New Item</button>
         </div>
     );
 };

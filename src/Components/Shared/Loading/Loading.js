@@ -1,10 +1,27 @@
 import React from 'react';
+import './Loading.css'
 import { Spinner } from 'react-bootstrap';
 
 const Loading = () => {
     return (
-        <div style={{height: '300px'}} className='w-100 d-flex justify-content-center align-items-center'>
-            <Spinner animation="border" variant="primary" />
+        <div class="loader">
+            <div class="loader-inner">
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+            </div>
         </div>
     );
 };

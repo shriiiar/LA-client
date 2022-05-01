@@ -8,7 +8,7 @@ const SingleMyItem = (props) => {
     const { item } = props;
     const { name, description, price, img, supplierName, quantity } = item;
     const [getData, setGetData] = GetData();
-    const [DecreaseByOne, IncreaseByOne, DeleteByOne] = AllFunctions();
+    const [DecreaseByOne, IncreaseByOne] = AllFunctions();
 
     const [show, setShow] = useState(false);
 

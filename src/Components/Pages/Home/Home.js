@@ -106,7 +106,7 @@ const Home = () => {
                         getData.slice(0, 6).map(items => <InvididualItems key={items._id} items={items} fromHome={fromHome}></InvididualItems>)
                     }
                 </div>
-                <button onClick={() => goToManageInventory()} className='button-33 my-5'>Visit Inventory</button>
+                <button onClick={() => goToManageInventory()} className='button-2 my-5'>Visit Inventory</button>
             </div>
         </div>
     );
