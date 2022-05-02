@@ -12,6 +12,7 @@ import ManageInventory from './Components/Pages/Manage Inventory/ManageInventory
 import AddInvertory from './Components/Pages/Add Invertory/AddInvertory';
 import MyItems from './Components/Pages/My Items/MyItems';
 import { useEffect } from 'react';
+import Footer from './Components/Shared/Footer/Footer';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }

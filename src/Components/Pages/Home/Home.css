@@ -174,3 +174,22 @@ video {
     line-height: 88px;
   }
 }
+
+.img-div{
+  overflow: hidden !important;
+}
+
+.img-div > img{
+  transition: 0.5s ease-in;
+}
+
+.img-div > img:hover{
+  transform: scale(1.05);
+}
+
+.grid-img-div{
+  background-color: black;
+  overflow: hidden !important;
+}
+
+
