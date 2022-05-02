@@ -66,7 +66,7 @@ const Signup = () => {
         errorMsg = <p>{error?.message}</p>;
     }
     return (
-        <div className="row">
+        <div className="row align-items-center">
             <div className='col-lg-7 col-md-12 col-sm-12 order-2 order-sm-2 order-md-2 order-lg-1'>
                 <img className='wave img-fluid' src={signUpSvg} alt="signup svg image" />
             </div>

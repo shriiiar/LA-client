@@ -46,7 +46,7 @@ const SingleInventory = () => {
                     <button onClick={() => DecreaseByOne(car)} className='button-2'>Delivered</button>
                 </div>
             </aside>
-            <div className='card form-container p-5 card-form'>
+            <div className='form-container card-form'>
                 <div>
                     <h2 className='form-title mb-5 text-center'>Restock Inventory</h2>
                     <form onSubmit={EventSubmit}>
@@ -54,12 +54,12 @@ const SingleInventory = () => {
                             <label htmlFor='number'>Restock </label>
                             <input type="number" name="number" min="1" required />
                         </div>
-                        <input className='form-submit w-25' type="submit" required value="Restock" />
+                        <input className='form-submit button-33' type="submit" required value="Restock" />
                     </form>
 
                 </div>
             </div>
-            <button onClick={() => goToManageInventory()} className='button-1 mx-auto w-25'>Manage Inventory</button>
+            <button onClick={() => goToManageInventory()} className='button-1 mx-auto w-50'>Manage Inventory</button>
         </div>
     );
 };
