@@ -8,7 +8,7 @@
   z-index: 2;
   overflow: hidden;
   opacity: 0;
-  margin-top: 70px;
+  margin-top: 140px !important;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   -webkit-border-radius: 50%;
@@ -164,7 +164,7 @@
 }
 
 .card-form {
-  margin-top: 800px;
+  margin-top: 900px;
 }
 
 @-webkit-keyframes init {

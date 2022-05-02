@@ -16,14 +16,19 @@ const SocialLogin = () => {
 
     let from = location.state?.from?.pathname || "/";
     
-    let errorElement;
+    let errorElement, errorElement1;
 
     if(loading || loading1){
         <Loading></Loading>
     }
 
-    if (error || error1) {
-        errorElement = <p className='text-danger'>Error: {error?.message} {error1?.message}</p>
+    if (error) {
+        errorElement = <p className='text-danger'>Error: {error?.message}</p>
+        errorElement1 = <></>
+    }
+    else if(error1){
+        errorElement1 = <p className='text-danger'>Error: {error1?.message}</p>
+        errorElement = <></>
     }
 
     if (token) {
@@ -38,6 +43,7 @@ const SocialLogin = () => {
                 <div style={{ height: '1px' }} className='bg-danger w-50'></div>
             </div>
             {errorElement}
+            {errorElement1}
             <div className=''>
                 <button
                     onClick={() => signInWithGoogle()}

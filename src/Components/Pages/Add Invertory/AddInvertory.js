@@ -97,7 +97,7 @@ const AddInvertory = () => {
                             </div>
                             <div className="input-group w-75 mx-auto">
                                 <label htmlFor='quantity'>Quantity</label>
-                                <input type="number" name="quantity" required />
+                                <input type="number" name="quantity" min="1" required />
                             </div>
                             <div className="input-group w-75 mx-auto">
                                 <label htmlFor='supplierName'>Supplier Name</label>
