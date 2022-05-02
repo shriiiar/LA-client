@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import HelmetTitle from '../../Shared/HelmetTitle/HelmetTitle';
 import Loading from '../../Shared/Loading/Loading';
 import InvididualItems from '../Invididual Items/InvididualItems';
 import './ManageInventory.css';
@@ -10,7 +11,7 @@ const ManageInventory = () => {
     const navigate = useNavigate();
 
     useEffect( () => {
-        fetch('http://localhost:5000/inventory')
+        fetch('https://boiling-oasis-47037.herokuapp.com/inventory')
             .then(res => res.json())
             .then(newData => {
                 const match = newData.filter(item => item.name.toLowerCase().includes(searchText));
@@ -29,6 +30,7 @@ const ManageInventory = () => {
 
     return (
         <div>
+            <HelmetTitle title='Inventory'></HelmetTitle>
             <div className=''>
                 <input id='input-text' onChange={textChange} className='my-5' type="text" placeholder='Search..' />
             </div>

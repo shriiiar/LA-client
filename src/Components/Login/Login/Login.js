@@ -9,6 +9,7 @@ import SocialLogin from '../Social Login/SocialLogin';
 import Loading from '../../Shared/Loading/Loading';
 import useToken from '../../../Hooks/UseToken';
 import carPng from '../../../img/undraw_electric_car_b7hl.png';
+import HelmetTitle from '../../Shared/HelmetTitle/HelmetTitle';
 
 const Login = () => {
     const emailRef = useRef("");
@@ -67,39 +68,8 @@ const Login = () => {
         </div>
     }
     return (
-        // <div className='row'>
-        //     <div className="col-lg-7 col-md-12 col-sm-12 order-2 order-sm-2 order-md-2 order-lg-1">
-        //         <img className='wave img-fluid' src={carPng} alt="svg car image" />
-        //     </div>
-        //     <div className="col-lg-5 col-md-12 order-1 col-sm-12 order-sm-1 order-md-1 order-lg-2">
-        //         <div className='form-container'>
-        //             <div>
-        //                 <h2 className='form-title mb-5 text-center'>Login</h2>
-        //                 <form onSubmit={EventSubmit}>
-        //                     <div className="input-group">
-        //                         <label htmlFor='email'>Email</label>
-        //                         <input onBlur={eventSetEmail} ref={emailRef} type="email" name="email" required />
-        //                     </div>
-        //                     <div className="input-group">
-        //                         <label htmlFor='password'>Password</label>
-        //                         <input ref={passwordRef} type="password" name="password" />
-        //                     </div>
-        //                     <input className='form-submit button-33' type="submit" required value="Login" />
-        //                 </form>
-        //                 {errorElement}
-        //                 <p className='my-3 fs-5'>
-        //                     Already have an account? <button className='form-link bg-transparent border-0' onClick={resetPassword}>Reset Password</button>
-        //                 </p>
-        //                 <p className='my-3 fs-5'>
-        //                     New User? <Link className='form-link' to='/signup'>Sign Up</Link>
-        //                 </p>
-        //                 <SocialLogin></SocialLogin>
-        //             </div>
-        //             <ToastContainer />
-        //         </div>
-        //     </div>
-        // </div>
         <div>
+            <HelmetTitle title='Login'></HelmetTitle>
             <div class="page">
                 <div class="container-login">
                     <div class="left">
@@ -108,7 +78,7 @@ const Login = () => {
                     </div>
                     <div class="right">
                         <form onSubmit={EventSubmit}>
-                            <div className="input-group w-75 mx-auto">
+                            <div className="input-group mb-0 w-75 mx-auto">
                                 <label htmlFor='email'>Email</label>
                                 <input onBlur={eventSetEmail} ref={emailRef} type="email" name="email" id='email' required />
                             </div>
@@ -116,12 +86,14 @@ const Login = () => {
                                 <label htmlFor='password'>Password</label>
                                 <input ref={passwordRef} type="password" name="password" id='password' />
                             </div>
+                            <button className='form-link bg-transparent border-0 mb-3' onClick={resetPassword}>Reset Password</button>
+
                             <input className='form-submit button-33 w-75 mx-auto' type="submit" required value="Login" />
                         </form>
                     </div>
                     <ToastContainer />
                 </div>
-                <div className='w-50 mx-auto' style={{margin: "210px 0 0 0"}}>
+                <div className='w-50 mx-auto' style={{ margin: "220px 0 0 0" }}>
                     {errorElement}
                     <p className='my-3 fs-5'>
                         New User? <Link className='form-link' to='/signup'>Sign Up</Link>

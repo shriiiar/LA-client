@@ -8,6 +8,7 @@ import auth from '../../../firebase.init';
 import SingleMyItem from '../SingleMyItem/SingleMyItem';
 import emptyCartPic from '../../../img/empty cart.jpg';
 import './MyItems.css'
+import HelmetTitle from '../../Shared/HelmetTitle/HelmetTitle';
 
 const MyItems = () => {
     const [myItems, setMyItems] = useState([]);
@@ -19,7 +20,7 @@ const MyItems = () => {
 
         const getMtItems = async () => {
             const email = user?.email;
-            const url = `http://localhost:5000/myItems?email=${email}`;
+            const url = `https://boiling-oasis-47037.herokuapp.com/myItems?email=${email}`;
             try {
                 const { data } = await axiosPrivate.get(url);
                 setMyItems(data);
@@ -42,6 +43,7 @@ const MyItems = () => {
 
     return (
         <div>
+            <HelmetTitle title='My Items'></HelmetTitle>
             <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3'>
                 {
                     myItems.map(items => <SingleMyItem key={items._id} item={items}></SingleMyItem>)

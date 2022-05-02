@@ -8,7 +8,7 @@ const AllFunctions = () => {
     const navigate = useNavigate();
 
     const Delete = (id) => {
-        const url = `http://localhost:5000/inventory/${id}`;
+        const url = `https://boiling-oasis-47037.herokuapp.com/inventory/${id}`;
         fetch(url, {
             method: 'DELETE'
         })
@@ -33,7 +33,7 @@ const AllFunctions = () => {
 
             const newItem = { name: item.name, description: item.description, price: item.price, img: item.img, supplierName: item.supplierName, quantity: newQuantity };
 
-            const url = `http://localhost:5000/inventory/${item._id}`;
+            const url = `https://boiling-oasis-47037.herokuapp.com/inventory/${item._id}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -61,7 +61,7 @@ const AllFunctions = () => {
 
         const newItem = { name: item.name, description: item.description, price: item.price, img: item.img, supplierName: item.supplierName, quantity: newQuantity };
 
-        const url = `http://localhost:5000/inventory/${item._id}`;
+        const url = `https://boiling-oasis-47037.herokuapp.com/inventory/${item._id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

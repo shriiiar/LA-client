@@ -14,8 +14,9 @@ import vid2 from '../../../vid/Model S_4.mp4';
 import vid3 from '../../../vid/Model S_3.mp4';
 import vid5 from '../../../vid/The new BMW 7 Series. Official TV Commercial..mp4';
 import vid6 from '../../../vid/Introducing the New Range Rover Velar Plug-In-Hybrid.mp4';
-import vid7 from '../../../vid/Introducing the New Range Rover Velar Plug-In-Hybrid.mp4';
+import vid7 from '../../../vid/Aventador SVJ- shaping the future.mp4';
 import { useNavigate } from 'react-router-dom';
+import HelmetTitle from '../../Shared/HelmetTitle/HelmetTitle';
 
 const Home = () => {
     const [getData, setGetData] = GetData();
@@ -26,10 +27,11 @@ const Home = () => {
     }
     return (
         <div>
+            <HelmetTitle title='Home'></HelmetTitle>
             <div style={{ margin: "150px 0" }} className="row align-items-center">
                 <div className="col-lg-7 col-md-12 col-sm-12 order-2 order-sm-2 order-md-2 order-lg-1 text-start ps-5 mt-5">
                     <h1>LA Customs</h1>
-                    <p className='fs-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit placeat necessitatibus repudiandae. <br /> Eligendi at recusandae nisi hic cumque reiciendis, culpa error consectetur <br /> facere doloribus sed perferendis quas id, aliquid sequi.</p>
+                    <p className='fs-3'>From imported cars to custom we got your back. A mordern car inventory with world class <span className='button-2 fs-3'>Auto Pilot System</span> .Give your car the intelliegence it needs. PEACE</p>
                     <button className='button-2'>LA Customs</button>
                 </div>
                 <div className="col-lg-5 col-md-12 order-1 col-sm-12 order-sm-1 order-md-1 order-lg-2">
@@ -38,6 +40,9 @@ const Home = () => {
                             <Carousel.Item>
                                 <video class="mt-3" src={vid}
                                     autoPlay loop muted></video>
+                                <Carousel.Caption>
+                                    <h3>LA Customs</h3>
+                                </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
                                 <img
@@ -47,8 +52,8 @@ const Home = () => {
                                 />
 
                                 <Carousel.Caption>
-                                    <h3>Second slide label</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <h3>Lamborghini Aventador</h3>
+                                    <p>The old classic meets V-13, With 769 Horse Power. Speed is just a piece of cake</p>
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
@@ -59,8 +64,8 @@ const Home = () => {
                                 />
 
                                 <Carousel.Caption>
-                                    <h3>Third slide label</h3>
-                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                    <h3>G-Wagen Y</h3>
+                                    <p>Two-seated old school car based on the V-12 engine. Standard with a V-12 engine</p>
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
@@ -71,8 +76,8 @@ const Home = () => {
                                 />
 
                                 <Carousel.Caption>
-                                    <h3>Third slide label</h3>
-                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                    <h3>Camaro Classic</h3>
+                                    <p>A ride towards fun and danger, Alpha-G Horse Power to match rivals</p>
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
@@ -83,8 +88,8 @@ const Home = () => {
                                 />
 
                                 <Carousel.Caption>
-                                    <h3>Third slide label</h3>
-                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                    <h3>BMW E39 M5</h3>
+                                    <p>The E39 generation of the M5 is the first M5 to use a V8 engine, resulting in an increase in power output to 294 kW</p>
                                 </Carousel.Caption>
                             </Carousel.Item>
                         </Carousel>
@@ -120,7 +125,7 @@ const Home = () => {
                 <h1 className='button-1 w-50 mx-auto my-5'>Glance At Our Inventory</h1>
                 <div className='grid-img-div'>
                     <div className="row p-0">
-                        <div className="col-lg-6 col-md-12 col-sm-12 p-0 d-flex justify-content- center">
+                        <div className="col-lg-6 col-md-12 col-sm-12 p-0 d-flex justify-content-center">
                             <video className="w-75" src={vid6}
                                 autoPlay loop muted></video>
                         </div>

@@ -13,6 +13,7 @@ import AddInvertory from './Components/Pages/Add Invertory/AddInvertory';
 import MyItems from './Components/Pages/My Items/MyItems';
 import { useEffect } from 'react';
 import Footer from './Components/Shared/Footer/Footer';
+import ErrorRoute from './Components/Pages/Error-Route/ErrorRoute';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         </RequireAuth>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='*' element={<ErrorRoute></ErrorRoute>}></Route>
       </Routes>
       <Footer></Footer>
     </div>

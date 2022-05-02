@@ -15,7 +15,7 @@ const SingleMyItem = (props) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const confirm = id => {
-        const url = `http://localhost:5000/inventory/${id}`;
+        const url = `https://boiling-oasis-47037.herokuapp.com/inventory/${id}`;
         fetch(url, {
             method: 'DELETE'
         })
@@ -30,7 +30,7 @@ const SingleMyItem = (props) => {
 
     const [data, setData] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/inventory`)
+        fetch(`https://boiling-oasis-47037.herokuapp.com/inventory`)
             .then(res => res.json())
             .then(data => setData(data));
     }, [data])

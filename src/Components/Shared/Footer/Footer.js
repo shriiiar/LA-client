@@ -5,7 +5,7 @@ import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons'
 
 const Footer = () => {
     return (
-        <div class="footer-dark">
+        <div class="footer-dark mt-5">
             <footer id='footer'>
                 <div class="container">
                     <div class="row">

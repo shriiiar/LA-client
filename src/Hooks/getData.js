@@ -4,7 +4,7 @@ const GetData = () => {
     const [getData, setGetData] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/inventory')
+        fetch('https://boiling-oasis-47037.herokuapp.com/inventory')
             .then(res => res.json())
             .then(newData => setGetData(newData))
     }, []);

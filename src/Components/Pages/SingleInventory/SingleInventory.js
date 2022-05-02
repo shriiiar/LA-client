@@ -12,7 +12,7 @@ const SingleInventory = () => {
     const [car, setCar] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/inventory/${id}`)
+        fetch(`https://boiling-oasis-47037.herokuapp.com/inventory/${id}`)
             .then(res => res.json())
             .then(data => setCar(data));
     }, [car])
