@@ -12,11 +12,9 @@ import img5 from '../../../img/img5.jpg';
 import vid1 from '../../../vid/Model S_2.mp4';
 import vid2 from '../../../vid/Model S_4.mp4';
 import vid3 from '../../../vid/Model S_3.mp4';
-import vid4 from '../../../vid/The BMW Christmas Film _ Happy Holidays from BMW_.mp4';
 import vid5 from '../../../vid/The new BMW 7 Series. Official TV Commercial..mp4';
 import vid6 from '../../../vid/Introducing the New Range Rover Velar Plug-In-Hybrid.mp4';
 import vid7 from '../../../vid/Introducing the New Range Rover Velar Plug-In-Hybrid.mp4';
-import imggg from '../../../img/pexels-mike-116675.jpg';
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {

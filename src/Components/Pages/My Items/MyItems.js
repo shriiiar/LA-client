@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import axiosPrivate from '../../../Api/AxiosPrivate';
 import auth from '../../../firebase.init';
 import SingleMyItem from '../SingleMyItem/SingleMyItem';
+import emptyCartPic from '../../../img/empty cart.jpg';
 import './MyItems.css'
 
 const MyItems = () => {
@@ -35,14 +36,26 @@ const MyItems = () => {
 
     }, [user, myItems])
 
-    
+    const goToAddItems = () => {
+        navigate('/addInventory');
+    }
 
     return (
-        <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3'>
+        <div>
+            <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3'>
+                {
+                    myItems.map(items => <SingleMyItem key={items._id} item={items}></SingleMyItem>)
+                }
+            </div>
             {
-                myItems.map(items => <SingleMyItem key={items._id} item={items}></SingleMyItem>)
+                myItems.length === 0 && <>
+                    <p className='text-center fs-2 button-1 w-50 mx-auto'>You Have Not Added Any Items :(</p>
+                    <button onClick={() => goToAddItems()} className='button-33'>Add Items To Inventory</button>
+                    <img className='img-fluid d-flex mx-auto' src={emptyCartPic} width='1000px' alt="" />
+                </>
             }
         </div>
+
     );
 };
 

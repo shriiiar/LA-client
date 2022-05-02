@@ -5,7 +5,7 @@ import AllFunctions from '../../../Hooks/AllFunctions';
 import './SingleMyItem.css'
 import { Button, Modal } from 'react-bootstrap';
 const SingleMyItem = (props) => {
-    const { item } = props;
+    const { item, NoItem } = props;
     const { name, description, price, img, supplierName, quantity } = item;
     const [getData, setGetData] = GetData();
     const [DecreaseByOne, IncreaseByOne] = AllFunctions();
