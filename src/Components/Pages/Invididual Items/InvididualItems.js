@@ -48,7 +48,7 @@ const InvididualItems = (props) => {
     }
     return (
         <div className='p-5'>
-            <div className='card '>
+            <div className='card border-0'>
                 <img src={img} class="card__image" alt="" />
                 <div class="card__overlay">
                     <div class="card__header">
@@ -57,13 +57,21 @@ const InvididualItems = (props) => {
                             <span class="card__status">{supplierName}</span>
                         </div>
                     </div>
-                    <p className="card__description">{price}</p>
-                    <p className="card__description fs-5">{description}</p>
-                    <h4>Quantity {quantity}</h4>
-                    <div className='d-flex flex-column'>
-                        <button className='button-33 w-50 mx-auto mt-3'>Update</button>
-                        <button className='button-33 w-50 mx-auto my-3'>Delete</button>
-                    </div>
+                    <p className="card__description pb-2 fs-5">{price}</p>
+                    <p className="card__description fs-5 pb-2">{description}</p>
+                    <h4 className='card__description'>Quantity {quantity}</h4>
+                    {
+                        fromHome !== undefined ? <>
+                            <button onClick={() => newPath(items._id)} className='button-33 my-3 w-50 mx-auto'>Update</button>
+                        </>
+                            :
+                            <>
+                                <div className="d-flex flex-column">
+                                    <button onClick={() => newPath(items._id)} className='button-33 my-3 w-50 mx-auto'>Update</button>
+                                    <button onClick={() => Delete(items._id)} className='button-33 w-50 mx-auto mb-3'>Delete Item</button>
+                                </div>
+                            </>
+                    }
                 </div>
             </div>
             <Modal show={show} onHide={handleClose}>

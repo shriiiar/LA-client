@@ -46,17 +46,23 @@ const SingleMyItem = (props) => {
     }
     return (
         <div className='p-5'>
-            <div className='card h-100 my-4 justify-content-center'>
-                <h5 className='my-3 text-center'><span className='item-span'>{name}</span></h5>
-                <div className='img-div'>
-                    <img src={img} width="500px" className='img-fluid' alt="car image" />
+            <div className='card border-0'>
+                <img src={img} class="card__image" alt="" />
+                <div class="card__overlay">
+                    <div class="card__header">
+                        <div class="card__header-text fs-1">
+                            <h3 class="card__title">{name}</h3>
+                            <span class="card__status">{supplierName}</span>
+                        </div>
+                    </div>
+                    <p className="card__description pb-2 fs-5">{price}</p>
+                    <p className="card__description fs-5 pb-2">{description}</p>
+                    <h4 className='card__description'>Quantity {quantity}</h4>
+                    <div className="d-flex flex-column">
+                        <button onClick={() => newPath(item._id)} className='button-33 my-3 w-50 mx-auto'>Update</button>
+                        <button onClick={() => Delete(item._id)} className='button-33 w-50 mx-auto mb-3'>Delete Item</button>
+                    </div>
                 </div>
-                <p className='text-center fs-5'>{description}</p>
-                <h5 className='text-center'>Rating: <span className='item-span'>{price}</span></h5>
-                <h5 className='text-center'>Supplier Name: <span className='item-span'>{supplierName}</span></h5>
-                <h5 className='text-center'>Quantity: <span className='item-span'>{quantity}</span></h5>
-                <button onClick={() => newPath(props.item._id)} className='button-33 my-3'>Update</button>
-                <button onClick={() => Delete(props.item._id)} className='button-33'>Delete Item</button>
             </div>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>

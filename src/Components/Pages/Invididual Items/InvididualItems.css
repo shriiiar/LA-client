@@ -32,7 +32,7 @@
 } */
 
 :root {
-    --surface-color: #fff;
+    --surface-color: rgb(255, 245, 245);
     --curve: 40;
   }
   
@@ -58,6 +58,8 @@
   .card__image {      
     width: 100%;
     height: auto;
+    border-radius: calc(var(--curve) * 1px);
+    transition: 0.4s;   
   }
   
   .card__overlay {
@@ -74,6 +76,10 @@
   
   .card:hover .card__overlay {
     transform: translateY(0);
+  }
+
+  .card:hover > img{
+      transform: scale(1.05);
   }
   
   .card__header {
@@ -118,7 +124,6 @@
   .card__tagline {
     display: block;
     margin: 1em 0;
-    font-family: "MockFlowFont";  
     font-size: .8em; 
     color: #6A515E;  
   }
@@ -129,11 +134,9 @@
   }
   
   .card__description {
-    padding: 0 2em 2em;
     margin: 0;
     color: #6A515E;
-    font-family: "MockFlowFont";   
-    display: -webkit-box;
+    padding: 0 20px;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
     overflow: hidden;
