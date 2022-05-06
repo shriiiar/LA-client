@@ -6,7 +6,7 @@ import './SingleMyItem.css'
 import { Button, Modal } from 'react-bootstrap';
 const SingleMyItem = (props) => {
     const { item, NoItem } = props;
-    const { name, description, price, img, supplierName, quantity } = item;
+    const { name, description, price, img, supplierName, quantity, stock } = item;
     const [getData, setGetData] = GetData();
     const [DecreaseByOne, IncreaseByOne] = AllFunctions();
 
@@ -58,6 +58,7 @@ const SingleMyItem = (props) => {
                     <p className="card__description pb-2 fs-5">{price}</p>
                     <p className="card__description fs-5 pb-2">{description}</p>
                     <h4 className='card__description'>Quantity {quantity}</h4>
+                    <h5 className='card__description'>{stock}</h5>
                     <div className="d-flex flex-column">
                         <button onClick={() => newPath(item._id)} className='button-33 my-3 w-50 mx-auto'>Update</button>
                         <button onClick={() => Delete(item._id)} className='button-33 w-50 mx-auto mb-3'>Delete Item</button>

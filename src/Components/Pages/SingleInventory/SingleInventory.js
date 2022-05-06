@@ -17,8 +17,8 @@ const SingleInventory = () => {
             .then(data => setCar(data));
     }, [car])
 
-    const [DecreaseByOne, IncreaseByOne, DeleteByOne] = AllFunctions();
-    const { name, description, price, img, supplierName, quantity } = car;
+    const [DecreaseByOne, IncreaseByOne] = AllFunctions();
+    const { name, description, price, img, supplierName, quantity, stock } = car;
 
     const EventSubmit = event => {
         event.preventDefault();
@@ -35,7 +35,7 @@ const SingleInventory = () => {
         <div className='p-5 row flex-column'>
             <aside className="profile-card">
                 <header>
-                    <img src={img} className="hoverZoomLink my-3" />
+                    <img src={img} alt="car" className="hoverZoomLink my-3" />
                     <h1>{name}</h1>
                     <h2>{supplierName}</h2>
                 </header>
@@ -43,6 +43,7 @@ const SingleInventory = () => {
                     <p className='fs-4'>{description}</p>
                     <p className='fs-4'><span style={{ color: "#cf0a2c" }}>{price}</span></p>
                     <p className='fs-4'>Quantity <span style={{ color: "#cf0a2c" }}>{quantity}</span></p>
+                    <p className='fs-4'><span style={{ color: "#cf0a2c" }}>{stock}</span></p>
                     <button onClick={() => DecreaseByOne(car)} className='button-2'>Delivered</button>
                 </div>
             </aside>

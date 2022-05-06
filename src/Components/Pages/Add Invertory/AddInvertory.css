@@ -29,7 +29,7 @@
   top: 50px;
   position: relative;
   width: 100%;
-  margin-bottom: 80px;
+  margin-bottom: 100px;
   border-radius: 15px;
 }
 @media (max-width: 767px) {
@@ -59,9 +59,10 @@
   color: #f1f1f2;
   position: relative;
   width: 1200px;
-  top: 140px;
-  height: 900px !important;
+  top: 110px;
+  height: 1050px !important;
   border-radius: 15px;
+  margin-bottom: 100px !important;
 }
 @media (max-width: 767px) {
   .right-add {

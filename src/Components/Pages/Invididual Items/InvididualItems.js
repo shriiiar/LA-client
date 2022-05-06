@@ -7,7 +7,7 @@ import './InvididualItems.css'
 
 const InvididualItems = (props) => {
     const { items, fromHome } = props;
-    const { name, description, price, img, supplierName, quantity } = items;
+    const { name, description, price, img, supplierName, quantity, stock } = items;
     const [DecreaseByOne, IncreaseByOne] = AllFunctions();
     const navigate = useNavigate();
 
@@ -60,6 +60,7 @@ const InvididualItems = (props) => {
                     <p className="card__description pb-2 fs-5">{price}</p>
                     <p className="card__description fs-5 pb-2">{description}</p>
                     <h4 className='card__description'>Quantity {quantity}</h4>
+                    <h5 className='card__description'>{stock}</h5>
                     {
                         fromHome !== undefined ? <>
                             <button onClick={() => newPath(items._id)} className='button-33 my-3 w-50 mx-auto'>Update</button>
