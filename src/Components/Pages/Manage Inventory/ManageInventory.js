@@ -10,7 +10,7 @@ const ManageInventory = () => {
     const [searchText, setSearchText] = useState('');
     const navigate = useNavigate();
 
-    useEffect( () => {
+    useEffect(() => {
         fetch('https://boiling-oasis-47037.herokuapp.com/inventory')
             .then(res => res.json())
             .then(newData => {
@@ -34,12 +34,22 @@ const ManageInventory = () => {
             <div className=''>
                 <input id='input-text' onChange={textChange} className='my-5' type="text" placeholder='Search..' />
             </div>
-            <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3'>
+            {
+                data.length === 0 && <>
+                    <h2>Loading..</h2>
+                    <Loading></Loading>
+                </>
+            }
+            <div>
+                <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3'>
+                    {
+                        data.map(items => <InvididualItems key={items._id} items={items}></InvididualItems>)
+                    }
+                </div>
                 {
-                    data.map(items => <InvididualItems key={items._id} items={items}></InvididualItems>)
+                    data.length !== 0 && <button onClick={() => gotoMyItem()} className='button-2 my-5'>Add New Item</button>
                 }
             </div>
-            <button onClick={() => gotoMyItem()} className='button-2 my-5'>Add New Item</button>
         </div>
     );
 };

@@ -9,6 +9,7 @@ import SingleMyItem from '../SingleMyItem/SingleMyItem';
 import emptyCartPic from '../../../img/empty cart.jpg';
 import './MyItems.css'
 import HelmetTitle from '../../Shared/HelmetTitle/HelmetTitle';
+import Loading from '../../Shared/Loading/Loading';
 
 const MyItems = () => {
     const [myItems, setMyItems] = useState([]);
@@ -44,6 +45,9 @@ const MyItems = () => {
     return (
         <div>
             <HelmetTitle title='My Items'></HelmetTitle>
+            {
+                myItems.length === 0 && <Loading></Loading>
+            }
             <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3'>
                 {
                     myItems.map(items => <SingleMyItem key={items._id} item={items}></SingleMyItem>)
@@ -51,7 +55,7 @@ const MyItems = () => {
             </div>
             {
                 myItems.length === 0 && <>
-                    <p className='text-center fs-2 button-1 w-50 mx-auto'>You Have Not Added Any Items :(</p>
+                    <p className='text-center fs-2 button-1 w-50 mx-auto'>You Have Not Added Any Items</p>
                     <button onClick={() => goToAddItems()} className='button-33'>Add Items To Inventory</button>
                     <img className='img-fluid d-flex mx-auto' src={emptyCartPic} width='1000px' alt="" />
                 </>

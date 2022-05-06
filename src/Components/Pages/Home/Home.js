@@ -17,6 +17,7 @@ import vid6 from '../../../vid/Introducing the New Range Rover Velar Plug-In-Hyb
 import vid7 from '../../../vid/Aventador SVJ- shaping the future.mp4';
 import { useNavigate } from 'react-router-dom';
 import HelmetTitle from '../../Shared/HelmetTitle/HelmetTitle';
+import Loading from '../../Shared/Loading/Loading';
 
 const Home = () => {
     const [getData, setGetData] = GetData();
@@ -114,6 +115,9 @@ const Home = () => {
             </div>
             <div className="">
                 <h1 className='sec-2-header fs-4 button-1'>Inventory</h1>
+                {
+                    getData.length === 0 && <Loading></Loading>
+                }
                 <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3'>
                     {
                         getData.slice(0, 6).map(items => <InvididualItems key={items._id} items={items} fromHome={fromHome}></InvididualItems>)
