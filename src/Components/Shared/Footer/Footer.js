@@ -26,7 +26,7 @@ const Footer = () => {
                         </div>
                         <div class="col-md-6 item text">
                             <h3>LA Customs</h3>
-                            <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                            <p>From imported cars to custom we got your back. A mordern car inventory with world class Auto Pilot System. Give your car the intelligence it needs. PEACE</p>
                         </div>
                     </div>
                     <p class="copyright">LA Customs © 2022</p>

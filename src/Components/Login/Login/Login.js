@@ -26,10 +26,7 @@ const Login = () => {
         setEmail(event.target.value);
     }
 
-    const [signInWithEmailAndPassword, user, loading, error] =
-        useSignInWithEmailAndPassword(auth);
-
-
+    const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
 
     const [token] = useToken(user);
 

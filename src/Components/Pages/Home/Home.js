@@ -32,7 +32,7 @@ const Home = () => {
             <div style={{ margin: "150px 0" }} className="row align-items-center">
                 <div className="col-lg-7 col-md-12 col-sm-12 order-2 order-sm-2 order-md-2 order-lg-1 text-start ps-5 mt-5">
                     <h1>LA Customs</h1>
-                    <p className='fs-3'>From imported cars to custom we got your back. A mordern car inventory with world class <span className='button-2 fs-3'>Auto Pilot System</span> .Give your car the intelliegence it needs. PEACE</p>
+                    <p className='fs-3'>From imported cars to custom we got your back. A mordern car inventory with world class <span className='button-2 fs-3'>Auto Pilot System</span> .Give your car the intelligence it needs. PEACE</p>
                     <button className='button-2'>LA Customs</button>
                 </div>
                 <div className="col-lg-5 col-md-12 order-1 col-sm-12 order-sm-1 order-md-1 order-lg-2">
