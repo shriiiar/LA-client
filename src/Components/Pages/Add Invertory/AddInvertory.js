@@ -36,7 +36,7 @@ const AddInvertory = () => {
     return (
         <div>
             <HelmetTitle title='Add To Inventory'></HelmetTitle>
-            <div style={{ margin: "0 0 850px 0" }} class="page-add">
+            <div style={{ margin: "0 0 1050px 0" }} class="page-add">
                 <div class="container-add">
                     <div class="left-add">
                         <div class="login">Add Items</div>

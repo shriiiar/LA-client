@@ -15,6 +15,7 @@ import { useEffect } from 'react';
 import Footer from './Components/Shared/Footer/Footer';
 import ErrorRoute from './Components/Pages/Error-Route/ErrorRoute';
 import About from './Components/Pages/About/About';
+import Blogs from './Components/Pages/Blogs/Blogs';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/about' element={<About></About>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='*' element={<ErrorRoute></ErrorRoute>}></Route>
       </Routes>
       <Footer></Footer>
