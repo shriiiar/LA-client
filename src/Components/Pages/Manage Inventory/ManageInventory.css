@@ -17,25 +17,3 @@
 .shop-header {
   color: #cf0a2c;
 }
-
-.pagination > button {
-  margin: 0 10px 50px;
-}
-
-.pagination .selected {
-  background-color: black;
-  color: #ffffff;
-  cursor: pointer;
-  display: inline-block;
-  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
-  padding: 7px 20px;
-  text-align: center;
-  text-decoration: none;
-  transition: all 250ms;
-  border: 0;
-  font-size: 16px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  border-radius: 15px;
-}

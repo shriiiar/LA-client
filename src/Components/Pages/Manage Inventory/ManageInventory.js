@@ -29,7 +29,7 @@ const ManageInventory = () => {
     }
 
     return (
-        <div>
+        <div style={{margin: "0 0 500px 0"}}>
             <HelmetTitle title='Inventory'></HelmetTitle>
             <div className=''>
                 <input id='input-text' onChange={textChange} className='my-5' type="text" placeholder='Search..' />
