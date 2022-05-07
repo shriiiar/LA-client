@@ -4,7 +4,7 @@ import './About.css';
 
 const About = () => {
     return (
-        <div style={{ margin: "0 0 1100px 0" }} className='p-5 row flex-column'>
+        <div style={{ margin: "100px 0 1100px 0" }} className='p-5 row flex-column'>
             <aside className="profile-card-about">
                 <header>
                     <h1>LA Customs</h1>
