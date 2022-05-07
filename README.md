@@ -1,18 +1,20 @@
-# Getting Started with Create React App
+# LA Customs
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live Site [LA Customs](https://assignment11-4b728.web.app/)
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+It is a mordern car inventory website. Where an user gets to add items to the inventory and will see his/her added items in the My Items section. Also an user can delete items from inventory. This website uses MongoDb as database. An user can log in, sign up / sign out from the website.
 
-### `npm start`
+## Features and Functionality
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* A mordern car inventory website with user authentication method.
+* JTW is used to prevent data collection for unauthorized access.
+* Database is used for storing data.
+* User can add items to the inventory, meantime the database will be updated.
+* User can only see his/her added items in the My Items Section.
+* A user will be given a token to access private data. If an unauthorized access occurs the website will make an instant log out and will take to the log in page.
+* Animations are used for a pleasing user experience.
 
 ### `npm test`
 
