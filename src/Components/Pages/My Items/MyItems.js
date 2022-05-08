@@ -45,9 +45,6 @@ const MyItems = () => {
     return (
         <div>
             <HelmetTitle title='My Items'></HelmetTitle>
-            {
-                myItems.length === 0 && <Loading></Loading>
-            }
             <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3'>
                 {
                     myItems.map(items => <SingleMyItem key={items._id} item={items}></SingleMyItem>)

@@ -36,7 +36,6 @@ const ManageInventory = () => {
             </div>
             {
                 data.length === 0 && <>
-                    <h2>Loading..</h2>
                     <Loading></Loading>
                 </>
             }

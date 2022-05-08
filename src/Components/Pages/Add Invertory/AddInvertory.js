@@ -30,7 +30,7 @@ const AddInvertory = () => {
                 console.log(result);
                 setGetData(result);
             })
-        // event.target.reset();
+        event.target.reset();
         toast('Items Added, Check My Items Section')
     };
     return (
