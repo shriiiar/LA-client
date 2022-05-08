@@ -16,6 +16,19 @@ It is a mordern car inventory website. Where an user gets to add items to the in
 * A user will be given a token to access private data. If an unauthorized access occurs the website will make an instant log out and will take to the log in page.
 * Animations are used for a pleasing user experience.
 
+## Technologies (frameworks, libraries) used in Client Side
+
+* React Route
+* React Bootstrap
+* Firebase
+* React Firebase Hooks
+* Toastify
+
+## Technologies (frameworks, libraries) used in Server Side
+* Express js
+* MongoDb
+* JWT Token
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\

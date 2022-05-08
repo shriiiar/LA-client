@@ -10,7 +10,19 @@ const Blogs = () => {
                 </div>
                 <div class="card-body">
                     <p class="card-text fs-5">
-                        JavaScript is a basic programming language that can be used in any browser that has the JavaScript Engine installed. Whereas Node JS is a JavaScript interpreter or runtime environment with numerous flaws, it requires libraries that can be readily accessible from JavaScript programming for better utilization. For one online application, JavaScript is often utilized for any client-side activities. An activity might be dealing with business validation, dynamic page display at a set time period, or a simple Ajax request. For every online application, they are used for the maximum amount of time. Node JS, on the other hand, is mostly used for non-blocking operations on any operating system. Non-blocking operations on an operating system include writing or executing a shell script, retrieving specified hardware-related information in a single call, obtaining installed certificate data on the system, and doing a large number of defined tasks.
+                        NodeJS is an open-source, cross-platform Javascript runtime environment for server-side javascript execution. Thanks to Nodejs, Javascript code may now run outside of the browser. Nodejs is a web development framework with a vast number of modules. <br />
+                        A scripting language is Javascript. The most popular abbreviation is JS. The ECMA script might be considered an upgraded version of Javascript. Javascript is a high-level programming language that uses the Oops notion and is based on prototype inheritance.
+                    </p>
+                </div>
+            </div>
+            <div class="blogs mt-3">
+                <div class="card-header">
+                    <h1>When should you use nodejs and when should you use mongodb?</h1>
+                </div>
+                <div class="card-body">
+                    <p class="card-text fs-5">
+                        Each project requires a programming environment and a runtime library that can build and/or interpret your code, as well as basic programming tools and help. Nodejs is a Javascript-based programming language. Similar tools are available in Python, Java, PHP, C#, C++, Go, and other languages. <br />
+                        If your software requires the capacity to save data so that it can be searched or updated later, a database will almost certainly be necessary. There are several well-known databases accessible. One such database is MongoDB. Other databases include MariaDB, MySql, CouchDB, DynamoDB (on Amazon Web Services), and Postgres.
                     </p>
                 </div>
             </div>
@@ -20,9 +32,8 @@ const Blogs = () => {
                 </div>
                 <div class="card-body">
                     <p class="card-text fs-5">
-                        Relational databases are SQL, while non-relational databases are NoSQL.
-                        SQL databases have a specified schema and employ structured query language. For unstructured data, NoSQL databases use dynamic schemas.
-                        SQL databases scale vertically, but NoSQL databases scale horizontally. NoSQL databases are document, key-value, graph, or wide-column stores, whereas SQL databases are table-based. SQL databases excel in multi-row transactions, while NoSQL excels at unstructured data like documents and JSON.
+                        SQL programming may be used for inserting, searching, updating, and removing database records. That isn't to suggest that SQL can't do more. Table-based data types are supported. SQL is compatible with databases such as MySQL, SQL Server, Oracle, and others. Declarative commands make SQL basic and easy to understand. <br />
+                        NoSQL is a non-relational database management system that does not require a fixed schema, joins, or is easy to scale. A NoSQL database is used for scattered data repositories with massive data storage requirements. The greatest benefit of NoSQL is its flexibility. Programmers aren't restricted to merely storing organized data. Because NoSQL databases are not bound by a predetermined structure, they may readily store and retrieve data.
                     </p>
                 </div>
             </div>
@@ -32,7 +43,8 @@ const Blogs = () => {
                 </div>
                 <div class="card-body">
                     <p class="card-text fs-5">
-                        JWTs differ from other web tokens in that they contain a set of claims. Claims are used to transmit information between two parties. What these claims are depends on the use case at hand. For example, a claim may assert who issued the token, how long it is valid for, or what permissions the client has been granted. A JWT is a string made up of three parts, separated by dots, and serialized using base64. Each subsequent request will contain the JWT once the user has signed in, allowing the user to access routes, services, and resources that are authorized with that token. Because of its low overhead and flexibility to be utilized across several domains, JWT is currently commonly used for Single Sign On.
+                        JWT (JSON Web Token) is an open standard that allows two parties — a client and a server — to communicate security information. JSON items, containing a set of claims, are encoded in each JWT.
+                        The server produces and sends a token to the client that confirms the user's identity. The client will send the token back to the server with each subsequent request, indicating that the request is originating from a certain identity.
                     </p>
                 </div>
             </div>
