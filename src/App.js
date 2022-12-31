@@ -37,9 +37,9 @@ function App() {
           <AddInvertory></AddInvertory>
         </RequireAuth>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
+        <Route path='/banner' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/about' element={<About></About>}></Route>
-        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='*' element={<ErrorRoute></ErrorRoute>}></Route>
       </Routes>
       <Footer></Footer>

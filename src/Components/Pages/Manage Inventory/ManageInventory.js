@@ -17,7 +17,18 @@ const ManageInventory = () => {
                 const match = newData.filter(item => item.name.toLowerCase().includes(searchText));
                 setData(match);
             })
-    }, [searchText, data])
+    }, [searchText])
+
+	const refetch = (data) => {
+		if(data){
+			fetch('http://localhost:5000/inventory')
+            .then(res => res.json())
+            .then(newData => {
+                const match = newData.filter(item => item.name.toLowerCase().includes(searchText));
+                setData(match);
+            })
+		}
+	}
 
     const textChange = (event) => {
         console.log(event.target.value);
@@ -42,7 +53,7 @@ const ManageInventory = () => {
             <div>
                 <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3'>
                     {
-                        data.map(items => <InvididualItems key={items._id} items={items}></InvididualItems>)
+                        data.map(items => <InvididualItems key={items._id} items={items} refetch={refetch}></InvididualItems>)
                     }
                 </div>
                 {

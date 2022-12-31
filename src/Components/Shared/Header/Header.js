@@ -32,8 +32,8 @@ const Header = () => {
                                 <CustomLink className="me-4 navLink" to="/addInventory">Add Inventory</CustomLink>
                             </>
                         }
-                        <CustomLink className="me-4 navLink" to="/blogs">Blogs</CustomLink>
-                        <CustomLink className="me-4 navLink" to="/about">About</CustomLink>
+                        <CustomLink className="me-4 navLink" to="/banner">Banner</CustomLink>
+                        <CustomLink className="me-4 navLink" to="/about">Contact Us</CustomLink>
                         {
                             !user ? <>
                                 <CustomLink className="me-4 navLink" to="/signup">Sign Up</CustomLink>

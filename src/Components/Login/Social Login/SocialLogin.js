@@ -51,12 +51,12 @@ const SocialLogin = () => {
                     <img style={{ width: '30px' }} src={googleLogo} alt="" />
                     <span className='px-2'>Sign In</span>
                 </button>
-                <button
+                {/* <button
                     onClick={() => signInWithGithub()}
                     className='button-33 d-block mx-auto'>
                     <img style={{ width: '30px' }} src={githubLogo} alt="" />
                     <span className='px-2'>Sign In</span>
-                </button>
+                </button> */}
             </div>
         </div>
     );

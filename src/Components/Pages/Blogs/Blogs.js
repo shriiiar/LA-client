@@ -1,53 +1,83 @@
 import React from 'react';
 import './Blogs.css';
+import { Carousel } from 'react-bootstrap';
+import vid from '../../../vid/Elite - Car Showroom Promo.mp4';
+import img1 from '../../../img/img1.jpg';
+import img2 from '../../../img/img2.jpg';
+import img3 from '../../../img/img3.jpg';
+import img4 from '../../../img/img4.jpg';
+import img5 from '../../../img/img5.jpg';
+import vid1 from '../../../vid/Model S_2.mp4';
+import vid2 from '../../../vid/Model S_4.mp4';
+import vid3 from '../../../vid/Model S_3.mp4';
+import vid5 from '../../../vid/The new BMW 7 Series. Official TV Commercial..mp4';
+import vid6 from '../../../vid/Introducing the New Range Rover Velar Plug-In-Hybrid.mp4';
+import vid7 from '../../../vid/Aventador SVJ- shaping the future.mp4';
 
 const Blogs = () => {
     return (
         <div className='blog'>
-            <div class="blogs mt-3">
-                <div class="card-header">
-                    <h1>Difference between javascript and nodejs?</h1>
-                </div>
-                <div class="card-body">
-                    <p class="card-text fs-5">
-                        NodeJS is an open-source, cross-platform Javascript runtime environment for server-side javascript execution. Thanks to Nodejs, Javascript code may now run outside of the browser. Nodejs is a web development framework with a vast number of modules. <br />
-                        A scripting language is Javascript. The most popular abbreviation is JS. The ECMA script might be considered an upgraded version of Javascript. Javascript is a high-level programming language that uses the Oops notion and is based on prototype inheritance.
-                    </p>
-                </div>
-            </div>
-            <div class="blogs mt-3">
-                <div class="card-header">
-                    <h1>When should you use nodejs and when should you use mongodb?</h1>
-                </div>
-                <div class="card-body">
-                    <p class="card-text fs-5">
-                        Each project requires a programming environment and a runtime library that can build and/or interpret your code, as well as basic programming tools and help. Nodejs is a Javascript-based programming language. Similar tools are available in Python, Java, PHP, C#, C++, Go, and other languages. <br />
-                        If your software requires the capacity to save data so that it can be searched or updated later, a database will almost certainly be necessary. There are several well-known databases accessible. One such database is MongoDB. Other databases include MariaDB, MySql, CouchDB, DynamoDB (on Amazon Web Services), and Postgres.
-                    </p>
-                </div>
-            </div>
-            <div class="blogs mt-3">
-                <div class="card-header">
-                    <h1>Differences between sql and nosql databases?</h1>
-                </div>
-                <div class="card-body">
-                    <p class="card-text fs-5">
-                        SQL programming may be used for inserting, searching, updating, and removing database records. That isn't to suggest that SQL can't do more. Table-based data types are supported. SQL is compatible with databases such as MySQL, SQL Server, Oracle, and others. Declarative commands make SQL basic and easy to understand. <br />
-                        NoSQL is a non-relational database management system that does not require a fixed schema, joins, or is easy to scale. A NoSQL database is used for scattered data repositories with massive data storage requirements. The greatest benefit of NoSQL is its flexibility. Programmers aren't restricted to merely storing organized data. Because NoSQL databases are not bound by a predetermined structure, they may readily store and retrieve data.
-                    </p>
-                </div>
-            </div>
-            <div class="blogs mt-3">
-                <div class="card-header">
-                    <h1>What is the purpose of jwt and how does it work?</h1>
-                </div>
-                <div class="card-body">
-                    <p class="card-text fs-5">
-                        JWT (JSON Web Token) is an open standard that allows two parties — a client and a server — to communicate security information. JSON items, containing a set of claims, are encoded in each JWT.
-                        The server produces and sends a token to the client that confirms the user's identity. The client will send the token back to the server with each subsequent request, indicating that the request is originating from a certain identity.
-                    </p>
-                </div>
-            </div>
+			<h1 className='sec-2-header fs-4 button-1 mb-3'>A mordern car inventory with world classAuto Pilot System
+			</h1>
+            <section className='container carousel'>
+                        <Carousel>
+                            <Carousel.Item>
+                                <video class="mt-3" src={vid}
+                                    autoPlay loop muted></video>
+                                <Carousel.Caption>
+                                    <h3>LA Customs</h3>
+                                </Carousel.Caption>
+                            </Carousel.Item>
+                            <Carousel.Item>
+                                <img
+                                    className="d-block w-100 img-fluid"
+                                    src='https://i.ibb.co/dpw9FZ9/img4.jpg'
+                                    alt="Second slide"
+                                />
+
+                                <Carousel.Caption>
+                                    <h3>Lamborghini Aventador</h3>
+                                    <p>The old classic meets V-13, With 769 Horse Power. Speed is just a piece of cake</p>
+                                </Carousel.Caption>
+                            </Carousel.Item>
+                            <Carousel.Item>
+                                <img
+                                    className="d-block w-100 img-fluid"
+                                    src='https://i.ibb.co/CtWSqwr/img1.jpg'
+                                    alt="Third slide"
+                                />
+
+                                <Carousel.Caption>
+                                    <h3>G-Wagen Y</h3>
+                                    <p>Two-seated old school car based on the V-12 engine. Standard with a V-12 engine</p>
+                                </Carousel.Caption>
+                            </Carousel.Item>
+                            <Carousel.Item>
+                                <img
+                                    className="d-block w-100 img-fluid"
+                                    src='https://i.ibb.co/MpM413N/img3.jpg'
+                                    alt="Third slide"
+                                />
+
+                                <Carousel.Caption>
+                                    <h3>Camaro Classic</h3>
+                                    <p>A ride towards fun and danger, Alpha-G Horse Power to match rivals</p>
+                                </Carousel.Caption>
+                            </Carousel.Item>
+                            <Carousel.Item>
+                                <img
+                                    className="d-block w-100 img-fluid"
+                                    src='https://i.ibb.co/3B2wsPM/img6.jpg'
+                                    alt="Third slide"
+                                />
+
+                                <Carousel.Caption>
+                                    <h3>BMW E39 M5</h3>
+                                    <p>The E39 generation of the M5 is the first M5 to use a V8 engine, resulting in an increase in power output to 294 kW</p>
+                                </Carousel.Caption>
+                            </Carousel.Item>
+                        </Carousel>
+                    </section>
         </div>
     );
 };

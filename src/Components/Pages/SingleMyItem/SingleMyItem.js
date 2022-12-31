@@ -33,7 +33,7 @@ const SingleMyItem = (props) => {
         fetch(`http://localhost:5000/inventory`)
             .then(res => res.json())
             .then(data => setData(data));
-    }, [data])
+    }, [])
 
     const navigate = useNavigate();
     const newPath = (id) => {

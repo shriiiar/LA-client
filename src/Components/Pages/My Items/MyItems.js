@@ -36,7 +36,7 @@ const MyItems = () => {
         }
         getMtItems();
 
-    }, [user, myItems])
+    }, [user])
 
     const goToAddItems = () => {
         navigate('/addInventory');
