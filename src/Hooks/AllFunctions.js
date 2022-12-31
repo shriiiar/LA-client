@@ -1,4 +1,4 @@
-import GetData from './GetData';
+import GetData from './getData';
 
 const AllFunctions = () => {
     const [getData, setGetData] = GetData();
@@ -20,7 +20,7 @@ const AllFunctions = () => {
 
         console.log(newItem);
 
-        const url = `https://boiling-oasis-47037.herokuapp.com/inventory/${item._id}`;
+        const url = `http://localhost:5000/inventory/${item._id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -43,7 +43,7 @@ const AllFunctions = () => {
 
         const newItem = { name: item.name, description: item.description, price: item.price, img: item.img, supplierName: item.supplierName, quantity: newQuantity, stock: 'In Stock' };
 
-        const url = `https://boiling-oasis-47037.herokuapp.com/inventory/${item._id}`;
+        const url = `http://localhost:5000/inventory/${item._id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

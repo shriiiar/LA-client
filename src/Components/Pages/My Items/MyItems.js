@@ -21,7 +21,7 @@ const MyItems = () => {
 
         const getMtItems = async () => {
             const email = user?.email;
-            const url = `https://boiling-oasis-47037.herokuapp.com/myItems?email=${email}`;
+            const url = `http://localhost:5000/myItems?email=${email}`;
             try {
                 const { data } = await axiosPrivate.get(url);
                 setMyItems(data);

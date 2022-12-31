@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import AllFunctions from '../../../Hooks/AllFunctions';
-import GetData from '../../../Hooks/GetData';
+import GetData from '../../../Hooks/getData';
 import './InvididualItems.css'
 
 const InvididualItems = (props) => {
@@ -16,7 +16,7 @@ const InvididualItems = (props) => {
     const [getData, setGetData] = GetData();
 
     useEffect(() => {
-        fetch(`https://boiling-oasis-47037.herokuapp.com/inventory`)
+        fetch(`http://localhost:5000/inventory`)
             .then(res => res.json())
             .then(data => setCar(data));
     }, [car])
@@ -28,7 +28,7 @@ const InvididualItems = (props) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const confirm = id => {
-        const url = `https://boiling-oasis-47037.herokuapp.com/inventory/${id}`;
+        const url = `http://localhost:5000/inventory/${id}`;
         fetch(url, {
             method: 'DELETE'
         })

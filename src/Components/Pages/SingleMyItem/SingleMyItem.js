@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import GetData from '../../../Hooks/GetData';
+import GetData from '../../../Hooks/getData';
 import AllFunctions from '../../../Hooks/AllFunctions';
 import './SingleMyItem.css'
 import { Button, Modal } from 'react-bootstrap';
@@ -15,7 +15,7 @@ const SingleMyItem = (props) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const confirm = id => {
-        const url = `https://boiling-oasis-47037.herokuapp.com/inventory/${id}`;
+        const url = `http://localhost:5000/inventory/${id}`;
         fetch(url, {
             method: 'DELETE'
         })
@@ -30,7 +30,7 @@ const SingleMyItem = (props) => {
 
     const [data, setData] = useState([]);
     useEffect(() => {
-        fetch(`https://boiling-oasis-47037.herokuapp.com/inventory`)
+        fetch(`http://localhost:5000/inventory`)
             .then(res => res.json())
             .then(data => setData(data));
     }, [data])

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import AllFunctions from '../../../Hooks/AllFunctions';
-import GetData from '../../../Hooks/GetData';
+import GetData from '../../../Hooks/getData';
 import './SingleInventory.css';
 
 const SingleInventory = () => {
@@ -12,7 +12,7 @@ const SingleInventory = () => {
     const [car, setCar] = useState([]);
 
     useEffect(() => {
-        fetch(`https://boiling-oasis-47037.herokuapp.com/inventory/${id}`)
+        fetch(`http://localhost:5000/inventory/${id}`)
             .then(res => res.json())
             .then(data => setCar(data));
     }, [car])

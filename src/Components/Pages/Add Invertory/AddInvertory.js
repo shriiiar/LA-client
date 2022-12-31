@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
-import GetData from '../../../Hooks/GetData';
+import GetData from '../../../Hooks/getData';
 import { toast, ToastContainer } from 'react-toastify';
 import './AddInvertory.css';
 import HelmetTitle from '../../Shared/HelmetTitle/HelmetTitle';
@@ -17,7 +17,7 @@ const AddInvertory = () => {
         const newItem = { name: event.target.name.value, description: event.target.description.value, price: event.target.price.value, img: event.target.img.value, supplierName: event.target.supplierName.value, quantity: event.target.quantity.value, stock: event.target.stock.value, email: event.target.email.value };
 
         event.preventDefault();
-        const url = `https://boiling-oasis-47037.herokuapp.com/inventory`;
+        const url = `http://localhost:5000/inventory`;
         fetch(url, {
             method: 'POST',
             headers: {

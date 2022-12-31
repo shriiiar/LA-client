@@ -11,7 +11,7 @@ const ManageInventory = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('https://boiling-oasis-47037.herokuapp.com/inventory')
+        fetch('http://localhost:5000/inventory')
             .then(res => res.json())
             .then(newData => {
                 const match = newData.filter(item => item.name.toLowerCase().includes(searchText));
